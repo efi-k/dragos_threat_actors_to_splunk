@@ -1,0 +1,1162 @@
+title,"mitre_string",id,description,source
+"Executables Or Script Creation In Suspicious Path",T1036,"a7e3f0f0-ae42-11eb-b245-acde48001122","This analytic will identify suspicious executable or scripts (known file
+  extensions) in list of suspicious file path in Windows. This technique is used by
+  adversaries to evade detection. The suspicious file path are known paths used in
+  the wild and are not common to have executable or scripts.
+","detections\endpoint\executables_or_script_creation_in_suspicious_path.yml"
+"Execute Javascript With Jscript COM CLSID","T1059|T1059.005","dc64d064-d346-11eb-8588-acde48001122","This analytic will identify suspicious process of cscript.exe where it
+  tries to execute javascript using jscript.encode CLSID (COM OBJ). This technique
+  was seen in ransomware (reddot ransomware) where it execute javascript with this
+  com object with combination of amsi disabling technique.
+","detections\endpoint\execute_javascript_with_jscript_com_clsid.yml"
+"Execution of File with Multiple Extensions","T1036|T1036.003","b06a555e-dce0-417d-a2eb-28a5d8d66ef7","This search looks for processes launched from files that have double
+  extensions in the file name. This is typically done to obscure the ""real"" file extension
+  and make it appear as though the file being accessed is a data file, as opposed
+  to executable content.
+","detections\endpoint\execution_of_file_with_multiple_extensions.yml"
+"Fsutil Zeroing File",T1070,"4e5e024e-fabb-11eb-8b8f-acde48001122","This search is to detect a suspicious fsutil process to zeroing a target
+  file. This technique was seen in lockbit ransomware where it tries to zero out its
+  malware path as part of its defense evasion after encrypting the compromised host.
+","detections\endpoint\fsutil_zeroing_file.yml"
+"GetAdComputer with PowerShell",T1018,"c5a31f80-5888-4d81-9f78-1cc65026316e","This analytic looks for the execution of `powershell.exe` with command-line
+  arguments utilized to discover remote systems. The `Get-AdComputer' commandlet returns
+  a list of all domain computers. Red Teams and adversaries alike may use this commandlet
+  to identify remote systems for situational awareness and Active Directory Discovery.
+","detections\endpoint\getadcomputer_with_powershell.yml"
+"GetAdComputer with PowerShell Script Block",T1018,"a9a1da02-8e27-4bf7-a348-f4389c9da487","The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify the execution of the `Get-AdGroup` commandlet. The `Get-AdGroup` commandlet
+  is used to return a list of all domain computers. Red Teams and adversaries may
+  leverage this commandlet to enumerate domain computers for situational awareness
+  and Active Directory Discovery.
+","detections\endpoint\getadcomputer_with_powershell_script_block.yml"
+"GetDomainComputer with PowerShell",T1018,"ed550c19-712e-43f6-bd19-6f58f61b3a5e","This analytic looks for the execution of `powershell.exe` with command-line
+  arguments utilized to discover remote systems. `Get-DomainComputer` is part of PowerView,
+  a PowerShell tool used to perform enumeration on Windows domains. Red Teams and
+  adversaries alike may leverage PowerView to enumerate domain groups for situational
+  awareness and Active Directory Discovery.
+","detections\endpoint\getdomaincomputer_with_powershell.yml"
+"GetDomainComputer with PowerShell Script Block",T1018,"f64da023-b988-4775-8d57-38e512beb56e","The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify the execution of the `Get-DomainComputer` commandlet. `GetDomainComputer`
+  is part of PowerView, a PowerShell tool used to perform enumeration on Windows domains.
+  Red Teams and adversaries alike may use PowerView to enumerate domain computers
+  for situational awareness and Active Directory Discovery.
+","detections\endpoint\getdomaincomputer_with_powershell_script_block.yml"
+"GetDomainController with PowerShell",T1018,"868ee0e4-52ab-484a-833a-6d85b7c028d0","This analytic looks for the execution of `powershell.exe` with command-line
+  arguments utilized to discover remote systems. `Get-DomainController` is part of
+  PowerView, a PowerShell tool used to perform enumeration on Windows domains. Red
+  Teams and adversaries alike may leverage PowerView to enumerate domain groups for
+  situational awareness and Active Directory Discovery.
+","detections\endpoint\getdomaincontroller_with_powershell.yml"
+"GetDomainController with PowerShell Script Block",T1018,"676b600a-a94d-4951-b346-11329431e6c1","The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify the execution of the `Get-DomainController` commandlet. `Get-DomainController`
+  is part of PowerView, a PowerShell tool used to perform enumeration on Windows domains.
+  Red Teams and adversaries alike may use PowerView to enumerate domain computers
+  for situational awareness and Active Directory Discovery.
+","detections\endpoint\getdomaincontroller_with_powershell_script_block.yml"
+"GetNetTcpconnection with PowerShell",T1049,"e02af35c-1de5-4afe-b4be-f45aba57272b","This analytic looks for the execution of `powershell.exe` with command-line
+  utilized to get a listing of network connections on a compromised system. The `Get-NetTcpConnection`
+  commandlet lists the current TCP connections. Red Teams and adversaries alike may
+  use this commandlet for situational awareness and Active Directory Discovery.
+","detections\endpoint\getnettcpconnection_with_powershell.yml"
+"GetNetTcpconnection with PowerShell Script Block",T1049,"091712ff-b02a-4d43-82ed-34765515d95d","The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify the execution of the `Get-NetTcpconnection ` commandlet. This commandlet
+  is used to return a listing of network connections on a compromised system. Red
+  Teams and adversaries alike may use this commandlet for situational awareness and
+  Active Directory Discovery.
+","detections\endpoint\getnettcpconnection_with_powershell_script_block.yml"
+"GetWmiObject Ds Computer with PowerShell",T1018,"7141122c-3bc2-4aaa-ab3b-7a85a0bbefc3","This analytic looks for the execution of `powershell.exe` with command-line
+  arguments utilized to discover remote systems. The `Get-WmiObject` commandlet combined
+  with the `DS_Computer` parameter can be used to return a list of all domain computers.
+  Red Teams and adversaries alike may leverage WMI in this case, using PowerShell,
+  to enumerate domain groups for situational awareness and Active Directory Discovery.
+","detections\endpoint\getwmiobject_ds_computer_with_powershell.yml"
+"GetWmiObject Ds Computer with PowerShell Script Block",T1018,"29b99201-723c-4118-847a-db2b3d3fb8ea","The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify the execution of the `Get-WmiObject` commandlet. The `DS_Computer` class
+  parameter leverages WMI to query for all domain computers. Red Teams and adversaries
+  may leverage this commandlet to enumerate domain computers for situational awareness
+  and Active Directory Discovery.
+","detections\endpoint\getwmiobject_ds_computer_with_powershell_script_block.yml"
+"MSHTML Module Load in Office Product","T1566|T1566.001","5f1c168e-118b-11ec-84ff-acde48001122","The following detection identifies the module load of mshtml.dll into
+  an Office product. This behavior has been related to CVE-2021-40444, whereas the
+  malicious document will load ActiveX, which activates the MSHTML component. The
+  vulnerability resides in the MSHTML component. During triage, identify parallel
+  processes and capture any file modifications for analysis.
+","detections\endpoint\mshtml_module_load_in_office_product.yml"
+"High Process Termination Frequency",T1486,"17cd75b2-8666-11eb-9ab4-acde48001122","This analytics are designed to indentify a high frequency of process
+  termination on a machine which is a common behavior of ransomware malware before
+  encrypting files. This technique is designed to avoid an exception error while accessing
+  (docs, images, database and etc..) in the infected machine for encryption.
+","detections\endpoint\high_process_termination_frequency.yml"
+"Hunting for Log4Shell",T1190,"158b68fa-5d1a-11ec-aac8-acde48001122","'The following hunting query assists with quickly assessing CVE-2021-44228,
+  or Log4Shell, activity mapped to the Web Datamodel. This is a combination query
+  attempting to identify, score and dashboard. Because the Log4Shell vulnerability
+  requires the string to be in the logs, this will work to identify the activity anywhere
+  in the HTTP headers using _raw. Modify the first line to use the same pattern matching
+  against other log sources. Scoring is based on a simple rubric of 0-5. 5 being the
+  best match, and less than 5 meant to identify additional patterns that will equate
+  to a higher total score. \
+  The first jndi match identifies the standard pattern of `{jndi:` \
+  jndi_fastmatch is meant to identify any jndi in the logs. The score is set low and
+  is meant to be the ""base"" score used later. \
+  jndi_proto is a protocol match that identifies `jndi` and one of `ldap, ldaps, rmi,
+  dns, nis, iiop, corba, nds, http, https.` \
+  all_match is a very well written regex by https://gist.github.com/Schvenn that identifies
+  nearly all patterns of this attack behavior. \
+  env works to identify environment variables in the header, meant to capture `AWS_ACCESS_KEY_ID`,
+  `AWS_SECRET_ACCESS_KEY` and `env`. \
+  uri_detect is string match looking for the common uri paths currently being scanned/abused
+  in the wild. \
+  keywords matches on enumerated values that, like `$ctx:loginId`, that may be found
+  in the header used by the adversary. \
+  lookup matching is meant to catch some basic obfuscation that has been identified
+  using upper, lower and date. \
+  Scoring will then occur based on any findings. The base score is meant to be 2 ,
+  created by jndi_fastmatch. Everything else is meant to increase that score. \
+  Finally, a simple table is created to show the scoring and the _raw field. Sort
+  based on score or columns of interest.'
+","detections\endpoint\hunting_for_log4shell.yml"
+"Java Class File download by Java User Agent",T1190,"8281ce42-5c50-11ec-82d2-acde48001122","The following analytic identifies a Java user agent performing a GET
+  request for a .class file from the remote site. This is potentially indicative of
+  exploitation of the Java application and may be related to current event CVE-2021-44228
+  (Log4Shell).
+","detections\endpoint\java_class_file_download_by_java_user_agent.yml"
+"Java Writing JSP File",T1190,"eb65619c-4f8d-4383-a975-d352765d344b","The following analytic identifies the process java writing a .jsp to disk. This is potentially indicative of a web shell being written to disk. 
+  Modify and tune the analytic based on data ingested. For instance, it may be worth running a broad query for jsp file writes first before performing a join.
+","detections\endpoint\java_writing_jsp_file.yml"
+"Jscript Execution Using Cscript App","T1059|T1059.007","002f1e24-146e-11ec-a470-acde48001122","This search is to detect a execution of jscript using cscript process.
+  Commonly when a user run jscript file it was executed by wscript.exe application.
+  This technique was seen in FIN7 js implant to execute its malicious script using
+  cscript process. This behavior is uncommon and a good artifacts to check further
+  anomalies within the network
+","detections\endpoint\jscript_execution_using_cscript_app.yml"
+"Linux Account Manipulation Of SSH Config and Keys","T1485|T1070.004|T1070","73a56508-1cf5-4df7-b8d9-5737fbdc27d2","This analytic is to detect a deletion of ssh key in a linux machine.
+  attacker may delete or modify ssh key to impair some security features or act as defense evasion in compromised linux machine.
+  This Anomaly can be also a good indicator of a malware trying to wipe or delete several files in a compromised host as part of its destructive payload like what
+  acidrain malware does in linux or router machines. This detection can be a good pivot to check what process and user
+  tries to delete this type of files which is not so common and need further investigation.
+","detections\endpoint\linux_account_manipulation_of_ssh_config_and_keys.yml"
+"Linux DD File Overwrite",T1485,"9b6aae5e-8d85-11ec-b2ae-acde48001122","This analytic is to look for dd command to overwrite file. This technique
+  was abused by adversaries or threat actor to destroy files or data on specific system
+  or in a large number of host within network to interrupt host avilability, services
+  and many more. This is also used to destroy data where it make the file irrecoverable
+  by forensic techniques through overwriting files, data or local and remote drives.
+","detections\endpoint\linux_dd_file_overwrite.yml"
+"Linux Deleting Critical Directory Using RM Command",T1485,"33f89303-cc6f-49ad-921d-2eaea38a6f7a","The following analytic identifies a suspicious deletion of a critical folder in Linux machine using rm command. 
+  This technique was seen in industroyer2 campaign to wipe or destroy energy facilities of a targeted sector. Deletion in these list of folder 
+  is not so common since it need some elevated privileges to access some of it. We recommend to look further events specially in file access or file deletion, 
+  process commandline that may related to this technique.
+","detections\endpoint\linux_deleting_critical_directory_using_rm_command.yml"
+"Linux Deletion Of Cron Jobs","T1485|T1070.004|T1070","3b132a71-9335-4f33-9932-00bb4f6ac7e8","This analytic is to detect a deletion of cron job in a linux machine. 
+  This technique can be related to an attacker, threat actor or malware to disable scheduled cron jobs that might be related to security or 
+  to evade some detections. We also saw that this technique can be a good indicator for malware that is trying to wipe or delete several files on the compromised host 
+  like the acidrain malware. This anomaly detection can be a good pivot detection to look for process and user doing it why they doing. Take note that this event can be done 
+  by administrator so filtering on those possible false positive event is needed.
+","detections\endpoint\linux_deletion_of_cron_jobs.yml"
+"Linux Deletion Of Init Daemon Script","T1485|T1070.004|T1070","729aab57-d26f-4156-b97f-ab8dda8f44b1","This analytic is to detect a deletion of init daemon script in a linux machine.
+  daemon script that place in /etc/init.d/ is a directory that can start and stop some daemon services in linux machines. 
+  attacker may delete or modify daemon script to impair some security features or act as defense evasion in a compromised linux machine. 
+  This TTP can be also a good indicator of a malware trying to wipe or delete several files in compromised host as part of its destructive payload like what 
+  acidrain malware does in linux or router machines. This detection can be a good pivot to check what process and user 
+  tries to delete this type of files which is not so common and need further investigation.
+","detections\endpoint\linux_deletion_of_init_daemon_script.yml"
+"Linux Deletion Of Services","T1485|T1070.004|T1070","b509bbd3-0331-4aaa-8e4a-d2affe100af6","This analytic is to detect a deletion of services in a linux machine.
+  attacker may delete or modify services to impair some security features or act as defense evasion in a compromised linux machine. 
+  This TTP can be also a good indicator of a malware trying to wipe or delete several files in a compromised host as part of its destructive payload like what 
+  acidrain malware does in linux or router machines. This detection can be a good pivot to check what process and user 
+  tries to delete this type of files which is not so common and need further investigation.
+","detections\endpoint\linux_deletion_of_services.yml"
+"Linux Disable Services",T1489,"f2e08a38-6689-4df4-ad8c-b51c16262316","The following analytic is to detect events that attempts to disable a service. 
+  This is typically identified in parallel with other instances of service enumeration of 
+  attempts to stop a service and then delete it. Adversaries utilize this technique like industroyer2 
+  malware to terminate security services or other related services to continue there objective as a destructive payload.
+","detections\endpoint\linux_disable_services.yml"
+"Linux High Frequency Of File Deletion In Boot Folder","T1485|T1070.004|T1070","e27fbc5d-0445-4c4a-bc39-87f060d5c602","This analytic is to detect a high frequency of file deletion relative to process name and process id /boot/ folder. 
+  These events was seen in industroyer2 wiper malware where it tries to delete all files in a critical directory in linux directory.
+  This detection already contains some filter that might cause false positive during our testing.
+","detections\endpoint\linux_high_frequency_of_file_deletion_in_boot_folder.yml"
+"Linux High Frequency Of File Deletion In Etc Folder","T1485|T1070.004|T1070","9d867448-2aff-4d07-876c-89409a752ff8","This analytic is to detect a high frequency of file deletion relative to process name and process id /etc/ folder. 
+  These events was seen in acidrain wiper malware where it tries to delete all files in a non-standard directory in linux directory.
+  This detection already contains some filter that might cause false positive during our testing. But we recommend to add more filter if needed.
+","detections\endpoint\linux_high_frequency_of_file_deletion_in_etc_folder.yml"
+"Linux Java Spawning Shell",T1190,"7b09db8a-5c20-11ec-9945-acde48001122","The following analytic identifies the process name of Java, Apache, or
+  Tomcat spawning a Linux shell. This is potentially indicative of exploitation of
+  the Java application and may be related to current event CVE-2021-44228 (Log4Shell).
+  The shells included in the macro are ""sh"", ""ksh"", ""zsh"", ""bash"", ""dash"", ""rbash"",
+  ""fish"", ""csh', ""tcsh', ""ion"", ""eshell"". Upon triage, review parallel processes and
+  command-line arguments to determine legitimacy.
+","detections\endpoint\linux_java_spawning_shell.yml"
+"Linux Kworker Process In Writable Process Path","T1036.004|T1036","1cefb270-74a5-4e27-aa0c-2b6fa7c5b4ed"," This analytic looks for suspicious process kworker commandline in a linux machine.
+  kworker process name or thread are common names of kernel threads in linux process.
+  This hunting detections can lead to investigate process contains process path in
+  writable directory in linux like /home/, /var/log and /tmp/. This technique was seen
+  in cyclopsblink malware to blend its core and other of its child process as normal
+  kworker on the compromised machine. This detection might be a good pivot to look for
+  other IOC related to cyclopsblink malware or attacks.
+","detections\endpoint\linux_kworker_process_in_writable_process_path.yml"
+"Linux pkexec Privilege Escalation",T1068,"03e22c1c-8086-11ec-ac2e-acde48001122","The following analytic identifies `pkexec` spawning with no command-line
+  arguments. A vulnerability in Polkit's pkexec component identified as CVE-2021-4034
+  (PwnKit) which is present in the default configuration of all major Linux distributions
+  and can be exploited to gain full root privileges on the system.
+","detections\endpoint\linux_pkexec_privilege_escalation.yml"
+"F5 BIG-IP iControl REST Vulnerability CVE-2022-1388",T1190,"bb1c2c30-107a-4e56-a4b9-1f7022867bfe","The following analytic identifies a recent unauthenticated remote code execution vulnerablity against the F5 BIG-IP iControl REST API. The analytic identifies the URI path found in the POCs and the HTTP Method of POST.
+  In addition, the request header will have the commands that may be executed in fields utilcmdargs and the auth field of X-F5-Auth-Token, which may have a random base64 encoded value.
+","detections\network\f5_big_ip_icontrol_rest_vulnerability_cve_2022_1388.yml"
+"Splunk Identified SSL TLS Certificates",T1040,"620fbb89-86fd-4e2e-925f-738374277586","The following analytic uses tags of SSL, TLS and certificate to identify the usage of the Splunk default certificates being utilized in the environment. Recommended guidance is to utilize valid TLS certificates which documentation may be found in Splunk Docs - https://docs.splunk.com/Documentation/Splunk/8.2.6/Security/AboutsecuringyourSplunkconfigurationwithSSL.
+","detections\network\splunk_identified_ssl_tls_certificates.yml"
+"Detect Outbound LDAP Traffic","T1190|T1059","5e06e262-d7cd-4216-b2f8-27b437e18458","Malicious actors often abuse misconfigured LDAP servers or applications
+  that use the LDAP servers in organizations. Outbound LDAP traffic should not be
+  allowed outbound through your perimeter firewall.  This search will help determine
+  if you have any LDAP connections to IP addresses outside of private (RFC1918) address
+  space.
+","detections\network\detect_outbound_ldap_traffic.yml"
+"Detect hosts connecting to dynamic domain providers",T1189,"a1e761ac-1344-4dbd-88b2-3f34c912d359","Malicious actors often abuse legitimate Dynamic DNS services to host
+  malicious payloads or interactive command and control nodes. Attackers will automate
+  domain resolution changes by routing dynamic domains to countless IP addresses to
+  circumvent firewall blocks, block lists as well as frustrate a network defenders
+  analytic and investigative processes. This search will look for DNS queries made
+  from within your infrastructure to suspicious dynamic domains.
+","detections\network\detect_hosts_connecting_to_dynamic_domain_providers.yml"
+"Splunk XSS in Monitoring Console",T1189,"b11accac-6fa3-4103-8a1a-7210f1a67087","On May 3rd, 2022, Splunk published a security advisory for a reflective Cross-Site Scripting (XSS) vulnerability stemming from the lack of input validation in the Distributed Monitoring Console app. This detection will alert on attempted exploitation in patched versions of Splunk as well as actual exploitation in unpatched version of Splunk.
+","detections\application\splunk_xss_in_monitoring_console.yml"
+"Windows Security Account Manager Stopped",T1489,"69c12d59-d951-431e-ab77-ec426b8d65e6","The search looks for a Windows Security Account Manager (SAM) was stopped
+  via command-line. This is consistent with Ryuk infections across a fleet of endpoints.
+","detections\endpoint\windows_security_account_manager_stopped.yml"
+"Windows System File on Disk",T1068,"993ce99d-9cdd-42c7-a2cf-733d5954e5a6","The following hunting analytic will assist with identifying new .sys files introduced in the environment. This query is meant to identify sys file creates on disk. There will be noise, but reducing common process names or applications should help to limit any volume.
+  The idea is to identify new sys files written to disk and identify them before they're added as a new kernel mode driver.
+","detections\endpoint\windows_system_file_on_disk.yml"
+"Winword Spawning Cmd","T1566|T1566.001","6fcbaedc-a37b-11eb-956b-acde48001122","The following detection identifies Microsoft Word spawning `cmd.exe`.
+  Typically, this is not common behavior and not default with winword.exe. Winword.exe
+  will generally be found in the following path `C:\Program Files\Microsoft Office\root\Office16`
+  (version will vary). Cmd.exe spawning from winword.exe is common for a spearphishing
+  attachment and is actively used. Albeit, the command-line will indicate what is
+  being executed. During triage, review parallel processes and identify any files
+  that may have been written. It is possible that COM is utilized to trampoline the
+  child process to `explorer.exe` or `wmiprvse.exe`.
+","detections\endpoint\winword_spawning_cmd.yml"
+"Winword Spawning PowerShell","T1566|T1566.001","b2c950b8-9be2-11eb-8658-acde48001122","The following detection identifies Microsoft Word spawning PowerShell.
+  Typically, this is not common behavior and not default with winword.exe. Winword.exe
+  will generally be found in the following path `C:\Program Files\Microsoft Office\root\Office16`
+  (version will vary). PowerShell spawning from winword.exe is common for a spearphishing
+  attachment and is actively used. Albeit, the command executed will most likely be
+  encoded and captured via another detection. During triage, review parallel processes
+  and identify any files that may have been written.
+","detections\endpoint\winword_spawning_powershell.yml"
+"Winword Spawning Windows Script Host","T1566|T1566.001","637e1b5c-9be1-11eb-9c32-acde48001122","The following detection identifies Microsoft Winword.exe spawning Windows
+  Script Host - `cscript.exe` or `wscript.exe`. Typically, this is not common behavior
+  and not default with Winword.exe. Winword.exe will generally be found in the following
+  path `C:\Program Files\Microsoft Office\root\Office16` (version will vary). `cscript.exe`
+  or `wscript.exe` default location is `c:\windows\system32\` or c:windows\syswow64\`.
+  `cscript.exe` or `wscript.exe` spawning from Winword.exe is common for a spearphishing
+  attachment and is actively used. Albeit, the command-line executed will most likely
+  be obfuscated and captured via another detection. During triage, review parallel
+  processes and identify any files that may have been written. Review the reputation
+  of the remote destination and block accordingly.
+","detections\endpoint\winword_spawning_windows_script_host.yml"
+"WMI Recon Running Process Or Services",T1592,"b5cd5526-cce7-11eb-b3bd-acde48001122","The following analytic identifies suspicious PowerShell script execution
+  via EventCode 4104, where WMI is performing an event query looking for running processes
+  or running services. This technique is commonly found in malware and APT events
+  where the adversary will map all running security applications or services on the
+  compromised machine. During triage, review parallel processes within the same timeframe.
+  Review the full script block to identify other related artifacts.
+","detections\endpoint\wmi_recon_running_process_or_services.yml"
+"Office Application Spawn rundll32 process","T1566|T1566.001","958751e4-9c5f-11eb-b103-acde48001122","this detection was designed to identifies suspicious spawned process
+  of known MS office application due to macro or malicious code. this technique can
+  be seen in so many malware like trickbot that used MS office as its weapon or attack
+  vector to initially infect the machines.
+","detections\endpoint\office_application_spawn_rundll32_process.yml"
+"Linux Stop Services",T1489,"d05204a5-9f1c-4946-a7f3-4fa58d76d5fd","The following analytic is to detect events that attempt to stop or clear a service. 
+  This is typically identified in parallel with other instances of service enumeration of 
+  attempts to stop a service and then delete it. Adversaries utilize this technique like industroyer2 
+  malware to terminate security services or other related services to continue there objective as a destructive payload.
+","detections\endpoint\linux_stop_services.yml"
+"MacOS LOLbin","T1059.004|T1059","58d270fb-5b39-418e-a855-4b8ac046805e","Detect multiple executions of Living off the Land (LOLbin) binaries in a
+  short period of time. 
+","detections\endpoint\macos_lolbin.yml"
+"Log4Shell CVE-2021-44228 Exploitation","T1105|T1190|T1059","9be30d80-3a39-4df9-9102-64a467b24eac","This correlation find exploitation of Log4Shell CVE-2021-44228 against
+  systems using detections from Splunk Security Content Analytic Story. It does this
+  by calculating the distinct count of MITRE ATT&CK tactics from Log4Shell detections
+  fired. If the count is larger than 2 or more distinct MITRE ATT&CK tactics we assume
+  high problability of exploitation. The Analytic story breaks down into 3 major phases
+  of a Log4Shell exploitation, specifically>
+  Initial Payload delivery eg. `${jndi:ldap://PAYLOAD_INJECTED}`
+  Call back to malicious LDAP server eg. Exploit.class 
+  Post Exploitation Activity/Lateral
+  Movement using Powershell or similar T1562.001 Each of these phases fall into different
+  MITRE ATT&CK Tactics (Initial Access, Execution, Command and Control), by looking
+  into 2 or more phases showing up in detections triggerd is how this correlation
+  search finds exploitation. If we get a notable from this correlation search the
+  best way to triage it is by investigating the affected systems against Log4Shell
+  exploitation using Splunk SOAR playbooks.
+","detections\endpoint\log4shell_cve_2021_44228_exploitation.yml"
+"Network Connection Discovery With Arp",T1049,"ae008c0f-83bd-4ed4-9350-98d4328e15d2","This analytic looks for the execution of `arp.exe` utilized to get a
+  listing of network connections on a compromised system. Red Teams and adversaries
+  alike may use arp.exe for situational awareness and Active Directory Discovery.
+","detections\endpoint\network_connection_discovery_arp.yml"
+"Linux Shred Overwrite Command",T1485,"c1952cf1-643c-4965-82de-11c067cbae76","This analytic is to detect a shred process to overwrite a files in a linux machine.
+  Shred Linux application is designed to overwrite file to hide its contents or make the deleted file un-recoverable.
+  Weve seen this technique in industroyer2 malware that tries to wipe energy facilities of targeted sector as part of its destructive attack. 
+  It might be some normal user may use this command for valid purposes but it is recommended to check what files, disk or folder it tries to shred 
+  that might be good pivot for incident response in this type of destructive malware.
+","detections\endpoint\linux_shred_overwrite_command.yml"
+"Network Connection Discovery With Netstat",T1049,"2cf5cc25-f39a-436d-a790-4857e5995ede","This analytic looks for the execution of `netstat.exe` with command-line
+  arguments utilized to get a listing of network connections on a compromised system.
+  Red Teams and adversaries alike may use netstat.exe for situational awareness and
+  Active Directory Discovery.
+","detections\endpoint\network_connection_discovery_netstat.yml"
+"Network Connection Discovery With Net",T1049,"640337e5-6e41-4b7f-af06-9d9eab5e1e2d","This analytic looks for the execution of `net.exe` with command-line
+  arguments utilized to get a listing of network connections on a compromised system.
+  Red Teams and adversaries alike may use net.exe for situational awareness and Active
+  Directory Discovery.
+","detections\endpoint\network_connection_discovery_net.yml"
+"MS Scripting Process Loading Ldap Module","T1059|T1059.007","0b0c40dc-14a6-11ec-b267-acde48001122","This search is to detect a suspicious MS scripting process such as wscript.exe
+  or cscript.exe that loading ldap module to process ldap query. This behavior was
+  seen in FIN7 implant where it uses javascript to execute ldap query to parse host
+  information that will send to its C2 server. this anomaly detections is a good initial
+  step to hunt further a suspicious ldap query or ldap related events to the host
+  that may give you good information regarding ldap or AD information processing or
+  might be a attacker.
+","detections\endpoint\ms_scripting_process_loading_ldap_module.yml"
+"MS Scripting Process Loading WMI Module","T1059|T1059.007","2eba3d36-14a6-11ec-a682-acde48001122","This search is to detect a suspicious MS scripting process such as wscript.exe
+  or cscript.exe that loading wmi module to process wmi query. This behavior was seen
+  in FIN7 implant where it uses javascript to execute wmi query to parse host information
+  that will send to its C2 server. this anomaly detections is a good initial step
+  to hunt further a suspicious wmi query or wmi related events to the host that may
+  give you good information regarding process that are commonly using wmi query or
+  modules or might be an attacker using this technique.
+","detections\endpoint\ms_scripting_process_loading_wmi_module.yml"
+"Nishang PowershellTCPOneLine","T1059|T1059.001","1a382c6c-7c2e-11eb-ac69-acde48001122","This query detects the Nishang Invoke-PowerShellTCPOneLine utility that
+  spawns a call back to a remote command and control server. This is a powershell
+  oneliner. In addition, this will capture on the command-line additional utilities
+  used by Nishang. Triage the endpoint and identify any parallel processes that look
+  suspicious. Review the reputation of the remote IP or domain contacted by the powershell
+  process.
+","detections\endpoint\nishang_powershelltcponeline.yml"
+"Malicious PowerShell Process With Obfuscation Techniques","T1059|T1059.001","cde75cf6-3c7a-4dd6-af01-27cdb4511fd4","This search looks for PowerShell processes launched with arguments that
+  have characters indicative of obfuscation on the command-line.
+","detections\endpoint\malicious_powershell_process_with_obfuscation_techniques.yml"
+"Malicious PowerShell Process - Execution Policy Bypass","T1059|T1059.001","9be56c82-b1cc-4318-87eb-d138afaaca39","This search looks for PowerShell processes started with parameters used
+  to bypass the local execution policy for scripts. These parameters are often observed
+  in attacks leveraging PowerShell scripts as they override the default PowerShell
+  execution policy.
+","detections\endpoint\malicious_powershell_process___execution_policy_bypass.yml"
+"Any Powershell DownloadFile","T1059|T1059.001|T1105","1a93b7ea-7af7-11eb-adb5-acde48001122","The following analytic identifies the use of PowerShell downloading a
+  file using `DownloadFile` method. This particular method is utilized in many different
+  PowerShell frameworks to download files and output to disk. Identify the source
+  (IP/domain) and destination file and triage appropriately. If AMSI logging or PowerShell
+  transaction logs are available, review for further details of the implant.
+","detections\endpoint\any_powershell_downloadfile.yml"
+"Any Powershell DownloadString","T1059|T1059.001|T1105","4d015ef2-7adf-11eb-95da-acde48001122","The following analytic identifies the use of PowerShell downloading a
+  file using `DownloadString` method. This particular method is utilized in many different
+  PowerShell frameworks to download files and output to disk. Identify the source
+  (IP/domain) and destination file and triage appropriately. If AMSI logging or PowerShell
+  transaction logs are available, review for further details of the implant.
+","detections\endpoint\any_powershell_downloadstring.yml"
+"Attacker Tools On Endpoint","T1036.005|T1036|T1003|T1595","a51bfe1a-94f0-48cc-b4e4-16a110145893","This search looks for execution of commonly used attacker tools on an
+  endpoint.
+","detections\endpoint\attacker_tools_on_endpoint.yml"
+"Batch File Write to System32","T1204|T1204.002","503d17cb-9eab-4cf8-a20e-01d5c6987ae3","The search looks for a batch file (.bat) written to the Windows system
+  directory tree.
+","detections\endpoint\batch_file_write_to_system32.yml"
+"Clear Unallocated Sector Using Cipher App","T1070.004|T1070","cd80a6ac-c9d9-11eb-8839-acde48001122","this search is to detect execution of `cipher.exe` to clear the unallocated
+  sectors of a specific disk. This technique was seen in some ransomware to make it
+  impossible to forensically recover deleted files.
+","detections\endpoint\clear_unallocated_sector_using_cipher_app.yml"
+"Clop Common Exec Parameter",T1204,"5a8a2a72-8322-11eb-9ee9-acde48001122","The following analytics are designed to identifies some CLOP ransomware
+  variant that using arguments to execute its main code or feature of its code. In
+  this variant if the parameter is ""runrun"", CLOP ransomware will try to encrypt files
+  in network shares and if it is ""temp.dat"", it will try to read from some stream
+  pipe or file start encrypting files within the infected local machines. This technique
+  can be also identified as an anti-sandbox technique to make its code non-responsive
+  since it is waiting for some parameter to execute properly.
+","detections\endpoint\clop_common_exec_parameter.yml"
+"Cmdline Tool Not Executed In CMD Shell","T1059|T1059.007","6c3f7dd8-153c-11ec-ac2d-acde48001122","The following analytic identifies a non-standard parent process (not
+  matching CMD, PowerShell, or Explorer) spawning `ipconfig.exe` or `systeminfo.exe`.
+  This particular behavior was seen in FIN7's JSSLoader .NET payload. This is also
+  typically seen when an adversary is injected into another process performing different
+  discovery techniques. This event stands out as a TTP since these tools are commonly
+  executed with a shell application or Explorer parent, and not by another application.
+  This TTP is a good indicator for an adversary gathering host information, but one
+  possible false positive might be an automated tool used by a system administator.
+","detections\endpoint\cmdline_tool_not_executed_in_cmd_shell.yml"
+"CMD Carry Out String Command Parameter","T1059.003|T1059","54a6ed00-3256-11ec-b031-acde48001122","The following analytic identifies command-line arguments where `cmd.exe
+  /c` is used to execute a program. `cmd /c` is used to run commands in MS-DOS and
+  terminate after command or process completion. This technique is commonly seen in
+  adversaries and malware to execute batch command using different shell like PowerShell
+  or different process other than `cmd.exe`. This is a good hunting query for suspicious
+  command-line made by a script or relative process execute it.
+","detections\endpoint\cmd_carry_out_string_command_parameter.yml"
+"CMD Echo Pipe - Escalation","T1059|T1059.003|T1543.003|T1543","eb277ba0-b96b-11eb-b00e-acde48001122","This analytic identifies a common behavior by Cobalt Strike and other
+  frameworks where the adversary will escalate privileges, either via `jump` (Cobalt
+  Strike PTH) or `getsystem`, using named-pipe impersonation. A suspicious event will
+  look like `cmd.exe /c echo 4sgryt3436 > \\.\Pipe\5erg53`.
+","detections\endpoint\cmd_echo_pipe___escalation.yml"
+"Common Ransomware Extensions",T1485,"a9e5c5db-db11-43ca-86a8-c852d1b2c0ec","The search looks for file modifications with extensions commonly used
+  by Ransomware
+","detections\endpoint\common_ransomware_extensions.yml"
+"Common Ransomware Notes",T1485,"ada0f478-84a8-4641-a3f1-d82362d6bd71","The search looks for files created with names matching those typically
+  used in ransomware notes that tell the victim how to get their data back.
+","detections\endpoint\common_ransomware_notes.yml"
+"Conti Common Exec parameter",T1204,"624919bc-c382-11eb-adcc-acde48001122","This search detects the suspicious commandline argument of revil ransomware
+  to encrypt specific or all local drive and network shares of the compromised machine
+  or host.
+","detections\endpoint\conti_common_exec_parameter.yml"
+"Create or delete windows shares using net exe","T1070|T1070.005","743a322c-9a68-4a0f-9c17-85d9cce2a27c","This search looks for the creation or deletion of hidden shares using
+  net.exe.
+","detections\endpoint\create_or_delete_windows_shares_using_net_exe.yml"
+"Deleting Of Net Users",T1531,"1c8c6f66-acce-11eb-aafb-acde48001122","This analytic will detect a suspicious net.exe/net1.exe command-line
+  to delete a user on a system. This technique may be use by an administrator for
+  legitimate purposes, however this behavior has been used in the wild to impair some
+  user or deleting adversaries tracks created during its lateral movement additional
+  systems. During triage, review parallel processes for additional behavior. Identify
+  any other user accounts created before or after.
+","detections\endpoint\deleting_of_net_users.yml"
+"Detect Empire with PowerShell Script Block Logging","T1059|T1059.001","bc1dc6b8-c954-11eb-bade-acde48001122","'The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify suspicious PowerShell execution. Script Block Logging captures the command
+  sent to PowerShell, the full command to be executed. Upon enabling, logs will output
+  to Windows event logs. Dependent upon volume, enable on critical endpoints or all.
+  \
+  This analytic identifies the common PowerShell stager used by PowerShell-Empire.
+  Each stager that may use PowerShell all uses the same pattern. The initial HTTP
+  will be base64 encoded and use `system.net.webclient`. Note that some obfuscation
+  may evade the analytic. \
+  During triage, review parallel processes using an EDR product or 4688 events. It
+  will be important to understand the timeline of events around this activity. Review
+  the entire logged PowerShell script block.'
+","detections\endpoint\detect_empire_with_powershell_script_block_logging.yml"
+"Detect Excessive Account Lockouts From Endpoint","T1078|T1078.002","c026e3dd-7e18-4abb-8f41-929e836efe74","This search identifies endpoints that have caused a relatively high number
+  of account lockouts in a short period.
+","detections\endpoint\detect_excessive_account_lockouts_from_endpoint.yml"
+"Detect Excessive User Account Lockouts","T1078|T1078.003","95a7f9a5-6096-437e-a19e-86f42ac609bd","This search detects user accounts that have been locked out a relatively
+  high number of times in a short period.
+","detections\endpoint\detect_excessive_user_account_lockouts.yml"
+"Detect Exchange Web Shell","T1505|T1505.003|T1190","8c14eeee-2af1-4a4b-bda8-228da0f4862a","'The following query identifies suspicious .aspx created in 3 paths identified
+  by Microsoft as known drop locations for Exchange exploitation related to HAFNIUM
+  group and recently disclosed vulnerablity named ProxyShell. Paths include: `\HttpProxy\owa\auth\`,
+  `\inetpub\wwwroot\aspnet_client\`, and `\HttpProxy\OAB\`. Upon triage, the suspicious
+  .aspx file will likely look obvious on the surface. inspect the contents for script
+  code inside. Identify additional log sources, IIS included, to review source and
+  other potential exploitation. It is often the case that a particular threat is only
+  applicable to a specific subset of systems in your environment. Typically analytics
+  to detect those threats are written without the benefit of being able to only target
+  those systems as well. Writing analytics against all systems when those behaviors
+  are limited to identifiable subsets of those systems is suboptimal. Consider the
+  case ProxyShell vulnerability on Microsoft Exchange Servers. With asset information,
+  a hunter can limit their analytics to systems that have been identified as Exchange
+  servers. A hunter may start with the theory that the exchange server is communicating
+  with new systems that it has not previously. If this theory is run against all publicly
+  facing systems, the amount of noise it will generate will likely render this theory
+  untenable. However, using the asset information to limit this analytic to just the
+  Exchange servers will reduce the noise allowing the hunter to focus only on the
+  systems where this behavioral change is relevant.'
+","detections\endpoint\detect_exchange_web_shell.yml"
+"Detect Prohibited Applications Spawning cmd exe","T1059|T1059.003","dcfd6b40-42f9-469d-a433-2e53f7486664","This search looks for executions of cmd.exe spawned by a process that
+  is often abused by attackers and that does not typically launch cmd.exe.
+","detections\endpoint\detect_prohibited_applications_spawning_cmd_exe.yml"
+"Detect Use of cmd exe to Launch Script Interpreters","T1059|T1059.003","b89919ed-fe5f-492c-b139-95dbb162039e","This search looks for the execution of the cscript.exe or wscript.exe
+  processes, with a parent of cmd.exe. The search will return the count, the first
+  and last time this execution was seen on a machine, the user, and the destination
+  of the machine
+","detections\endpoint\detect_use_of_cmd_exe_to_launch_script_interpreters.yml"
+"Disable Logs Using WevtUtil","T1070|T1070.001","236e7c8e-c9d9-11eb-a824-acde48001122","This search is to detect execution of wevtutil.exe to disable logs. This
+  technique was seen in several ransomware to disable the event logs to evade alerts
+  and detections.
+","detections\endpoint\disable_logs_using_wevtutil.yml"
+"Disabling Net User Account",T1531,"c0325326-acd6-11eb-98c2-acde48001122","This analytic will identify a suspicious command-line that disables a
+  user account using the `net.exe` utility native to Windows. This technique may used
+  by the adversaries to interrupt availability of such users to do their malicious
+  act.
+","detections\endpoint\disabling_net_user_account.yml"
+"Domain Controller Discovery with Nltest",T1018,"41243735-89a7-4c83-bcdd-570aa78f00a1","This analytic looks for the execution of `nltest.exe` with command-line
+  arguments utilized to discover remote systems. The arguments `/dclist:` and '/dsgetdc:',
+  can be used to return a list of all domain controllers. Red Teams and adversaries
+  alike may use nltest.exe to identify domain controllers in a Windows Domain for
+  situational awareness and Active Directory Discovery.
+","detections\endpoint\domain_controller_discovery_with_nltest.yml"
+"Domain Controller Discovery with Wmic",T1018,"64c7adaa-48ee-483c-b0d6-7175bc65e6cc","This analytic looks for the execution of `wmic.exe` with command-line
+  arguments utilized to discover remote systems. The arguments utilized in this command
+  line return a list of all domain controllers in a Windows domain. Red Teams and
+  adversaries alike use *.exe to identify remote systems for situational awareness
+  and Active Directory Discovery.
+","detections\endpoint\domain_controller_discovery_with_wmic.yml"
+"Drop IcedID License dat","T1204|T1204.002","b7a045fc-f14a-11eb-8e79-acde48001122","This search is to detect dropping a suspicious file named as ""license.dat""
+  in %appdata%. This behavior seen in latest IcedID malware that contain the actual
+  core bot that will be injected in other process to do banking stealing.
+","detections\endpoint\drop_icedid_license_dat.yml"
+"Excessive Attempt To Disable Services",T1489,"8fa2a0f0-acd9-11eb-8994-acde48001122","This analytic will identify suspicious series of command-line to disable
+  several services. This technique is seen where the adversary attempts to disable
+  security app services or other malware services to complete the objective on the
+  compromised system.
+","detections\endpoint\excessive_attempt_to_disable_services.yml"
+"Excessive File Deletion In WinDefender Folder",T1485,"b5baa09a-7a05-11ec-8da4-acde48001122","This analytic will identify excessive file deletion events in the Windows
+  Defender folder. This technique was seen in the WhisperGate malware campaign in
+  which adversaries abused Nirsofts advancedrun.exe to gain administrative privilege
+  to then execute PowerShell commands to delete files within the Windows Defender
+  application folder. This behavior is a good indicator the offending process is trying
+  to corrupt a Windows Defender installation.
+","detections\endpoint\excessive_file_deletion_in_windefender_folder.yml"
+"Excessive Service Stop Attempt",T1489,"ae8d3f4a-acd7-11eb-8846-acde48001122","This analytic identifies suspicious series of attempt to kill multiple
+  services on a system using either `net.exe` or `sc.exe`. This technique is use by
+  adversaries to terminate security services or other related services to continue
+  there objective and evade detections.
+","detections\endpoint\excessive_service_stop_attempt.yml"
+"Excessive Usage Of Net App",T1531,"45e52536-ae42-11eb-b5c6-acde48001122","This analytic identifies excessive usage of `net.exe` or `net1.exe` within
+  a bucket of time (1 minute). This behavior was seen in a Monero incident where the
+  adversary attempts to create many users, delete and disable users as part of its
+  malicious behavior.
+","detections\endpoint\excessive_usage_of_net_app.yml"
+"Process Deleting Its Process File Path",T1070,"f7eda4bc-871c-11eb-b110-acde48001122","This detection is to identify a suspicious process that tries to delete
+  the process file path related to its process. This technique is known to be defense
+  evasion once a certain condition of malware is satisfied or not. Clop ransomware
+  use this technique where it will try to delete its process file path using a .bat
+  command if the keyboard layout is not the layout it tries to infect.
+","detections\endpoint\process_deleting_its_process_file_path.yml"
+"Ransomware Notes bulk creation",T1486,"eff7919a-8330-11eb-83f8-acde48001122","The following analytics identifies a big number of instance of ransomware
+  notes (filetype e.g .txt, .html, .hta) file creation to the infected machine. This
+  behavior is a good sensor if the ransomware note filename is quite new for security
+  industry or the ransomware note filename is not in your ransomware lookup table
+  list for monitoring.
+","detections\endpoint\ransomware_notes_bulk_creation.yml"
+"Recon AVProduct Through Pwh or WMI",T1592,"28077620-c9f6-11eb-8785-acde48001122","The following analytic identifies suspicious PowerShell script execution
+  via EventCode 4104 performing checks to identify anti-virus products installed on
+  the endpoint. This technique is commonly found in malware and APT events where the
+  adversary will map all running security applications or services. During triage,
+  review parallel processes within the same timeframe. Review the full script block
+  to identify other related artifacts.
+","detections\endpoint\recon_avproduct_through_pwh_or_wmi.yml"
+"Recon Using WMI Class",T1592,"018c1972-ca07-11eb-9473-acde48001122","The following analytic identifies suspicious PowerShell via EventCode
+  4104, where WMI is performing an event query looking for running processes or running
+  services. This technique is commonly found where the adversary will identify services
+  and system information on the compromised machine. During triage, review parallel
+  processes within the same timeframe. Review the full script block to identify other
+  related artifacts.
+","detections\endpoint\recon_using_wmi_class.yml"
+"Recursive Delete of Directory In Batch CMD","T1070.004|T1070","ba570b3a-d356-11eb-8358-acde48001122","This search is to detect a suspicious commandline designed to delete
+  files or directory recursive using batch command. This technique was seen in ransomware
+  (reddot) where it it tries to delete the files in recycle bin to impaire user from
+  recovering deleted files.
+","detections\endpoint\recursive_delete_of_directory_in_batch_cmd.yml"
+"Windows Disable Memory Crash Dump",T1485,"59e54602-9680-11ec-a8a6-acde48001122","The following analytic identifies a process that is attempting to disable
+  the ability on Windows to generate a memory crash dump. This was recently identified
+  being utilized by HermeticWiper. To disable crash dumps, the value must be set to
+  0. This feature is typically modified to perform a memory crash dump when a computer
+  stops unexpectedly because of a Stop error (also known as a blue screen, system
+  crash, or bug check).
+","detections\endpoint\windows_disable_memory_crash_dump.yml"
+"Remcos RAT File Creation in Remcos Folder",T1113,"25ae862a-1ac3-11ec-94a1-acde48001122","This search is to detect file creation in remcos folder in appdata which
+  is the keylog and clipboard logs that will be send to its c2 server. This is really
+  a good TTP indicator that there is a remcos rat in the system that do keylogging,
+  clipboard grabbing and audio recording.
+","detections\endpoint\remcos_rat_file_creation_in_remcos_folder.yml"
+"Remote System Discovery with Adsisearcher",T1018,"70803451-0047-4e12-9d63-77fa7eb8649c","The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify the `[Adsisearcher]` type accelerator being used to query Active Directory
+  for domain computers. Red Teams and adversaries may leverage `[Adsisearcher]` to
+  enumerate domain computers for situational awareness and Active Directory Discovery.
+","detections\endpoint\remote_system_discovery_with_adsisearcher.yml"
+"Remote System Discovery with Dsquery",T1018,"9fb562f4-42f8-4139-8e11-a82edf7ed718","This analytic looks for the execution of `dsquery.exe` with command-line
+  arguments utilized to discover remote systems. The `computer` argument returns a
+  list of all computers registered in the domain. Red Teams and adversaries alike
+  engage in remote system discovery for situational awareness and Active Directory
+  Discovery.
+","detections\endpoint\remote_system_discovery_with_dsquery.yml"
+"Remote System Discovery with Net",T1018,"9df16706-04a2-41e2-bbfe-9b38b34409d3","This analytic looks for the execution of `net.exe` or `net1.exe` with
+  command-line arguments utilized to discover remote systems. The argument `domain
+  computers /domain` returns a list of all domain computers. Red Teams and adversaries
+  alike use net.exe to identify remote systems for situational awareness and Active
+  Directory Discovery.
+","detections\endpoint\remote_system_discovery_with_net.yml"
+"Remote System Discovery with Wmic",T1018,"d82eced3-b1dc-42ab-859e-a2fc98827359","This analytic looks for the execution of `wmic.exe` with command-line
+  arguments utilized to discover remote systems. The arguments utilized in this command
+  return a list of all the systems registered in the domain. Red Teams and adversaries
+  alike may leverage WMI and wmic.exe to identify remote systems for situational awareness
+  and Active Directory Discovery.
+","detections\endpoint\remote_system_discovery_with_wmic.yml"
+"Revil Common Exec Parameter",T1204,"85facebe-c382-11eb-9c3e-acde48001122","This analytic identifies suspicious commandline parameter that are commonly
+  used by REVIL ransomware to encrypts the compromise machine.
+","detections\endpoint\revil_common_exec_parameter.yml"
+"Ryuk Test Files Detected",T1486,"57d44d70-28d9-4ed1-acf5-1c80ae2bbce3","The search looks for files that contain the key word *Ryuk* under any
+  folder in the C drive, which is consistent with Ryuk propagation.
+","detections\endpoint\ryuk_test_files_detected.yml"
+"Ryuk Wake on LAN Command","T1059|T1059.003","538d0152-7aaa-11eb-beaa-acde48001122","This Splunk query identifies the use of Wake-on-LAN utilized by Ryuk
+  ransomware. The Ryuk Ransomware uses the Wake-on-Lan feature to turn on powered
+  off devices on a compromised network to have greater success encrypting them. This
+  is a high fidelity indicator of Ryuk ransomware executing on an endpoint. Upon triage,
+  isolate the endpoint. Additional file modification events will be within the users
+  profile (\appdata\roaming) and in public directories (users\public\). Review all
+  Scheduled Tasks on the isolated endpoint and across the fleet. Suspicious Scheduled
+  Tasks will include a path to a unknown binary and those endpoints should be isolated
+  until triaged.
+","detections\endpoint\ryuk_wake_on_lan_command.yml"
+"Samsam Test File Write",T1486,"493a879d-519d-428f-8f57-a06a0fdc107e","The search looks for a file named ""test.txt"" written to the windows system
+  directory tree, which is consistent with Samsam propagation.
+","detections\endpoint\samsam_test_file_write.yml"
+"Sdelete Application Execution","T1485|T1070.004|T1070","31702fc0-2682-11ec-85c3-acde48001122","This analytic is to detect the execution of sdelete.exe application sysinternal
+  tools. This tool is one of the most use tool of malware and adversaries to remove
+  or clear their tracks and artifact in the targetted host. This tool is designed
+  to delete securely a file in file system that remove the forensic evidence on the
+  machine. A good TTP query to check why user execute this application which is not
+  a common practice.
+","detections\endpoint\sdelete_application_execution.yml"
+"Set Default PowerShell Execution Policy To Unrestricted or Bypass","T1059|T1059.001","c2590137-0b08-4985-9ec5-6ae23d92f63d","Monitor for changes of the ExecutionPolicy in the registry to the values
+  ""unrestricted"" or ""bypass,"" which allows the execution of malicious scripts.
+","detections\endpoint\set_default_powershell_execution_policy_to_unrestricted_or_bypass.yml"
+"Spoolsv Suspicious Process Access",T1068,"799b606e-da81-11eb-93f8-acde48001122","This analytic identifies a suspicious behavior related to PrintNightmare,
+  or CVE-2021-34527 previously (CVE-2021-1675),  to gain privilege escalation on the
+  vulnerable machine. This exploit attacks a critical Windows Print Spooler Vulnerability
+  to elevate privilege. This detection is to look for suspicious process access made
+  by the spoolsv.exe that may related to the attack.
+","detections\endpoint\spoolsv_suspicious_process_access.yml"
+"Attempt To Delete Services","T1489|T1543|T1543.003","a0c8c292-d01a-11eb-aa18-acde48001122","The following analytic identifies Windows Service Control, `sc.exe`,
+  attempting to delete a service. This is typically identified in parallel with other
+  instances of service enumeration of attempts to stop a service and then delete it.
+  Adversaries utilize this technique to terminate security services or other related
+  services to continue there objective and evade detections.
+","detections\endpoint\ssa___attempt_to_delete_services.yml"
+"Attempt To Disable Services",T1489,"afb31de4-d023-11eb-98d5-acde48001122","The following analytic identifies Windows Service Control, `sc.exe`,
+  attempting to disable a service. This is typically identified in parallel with other
+  instances of service enumeration of attempts to stop a service and then disable
+  it. Adversaries utilize this technique to terminate security services or other related
+  services to continue there objective and evade detections.
+","detections\endpoint\ssa___attempt_to_disable_services.yml"
+"Clear Unallocated Sector Using Cipher App","T1070.004|T1070","8f907d90-6173-11ec-9c23-acde48001122","this search is to detect execution of `cipher.exe` to clear the unallocated
+  sectors of a specific disk. This technique was seen in some ransomware to make it
+  impossible to forensically recover deleted files.
+","detections\endpoint\ssa___clear_unallocated_sector_using_cipher_app.yml"
+"Delete A Net User",T1531,"8776d79c-d26e-11eb-9a56-acde48001122","This analytic will detect a suspicious net.exe/net1.exe command-line
+  to delete a user on a system. This technique may be use by an administrator for
+  legitimate purposes, however this behavior has been used in the wild to impair some
+  user or deleting adversaries tracks created during its lateral movement additional
+  systems. During triage, review parallel processes for additional behavior. Identify
+  any other user accounts created before or after.
+","detections\endpoint\ssa___delete_a_net_user.yml"
+"Disable Net User Account","T1489|T1078","ba858b08-d26c-11eb-af9b-acde48001122","This analytic will identify a suspicious command-line that disables a
+  user account using the native `net.exe` or `net1.exe` utility to Windows. This technique
+  may used by the adversaries to interrupt availability of accounts and continue the
+  impact against the organization.
+","detections\endpoint\ssa___disable_net_user_account.yml"
+"Fsutil Zeroing File",T1070,"f792cdc9-43ee-4429-a3c0-ffce4fed1a85","This search is to detect a suspicious fsutil process to zeroing a target
+  file. This technique was seen in lockbit ransomware where it tries to zero out its
+  malware path as part of its defense evasion after encrypting the compromised host.
+","detections\endpoint\ssa___fsutil_zeroing_file.yml"
+"Resize Shadowstorage Volume",T1489,"dbc30554-d27e-11eb-9e5e-acde48001122","The following analytic identifies the resizing of shadowstorage using
+  vssadmin.exe to avoid the shadow volumes being made again. This technique is typically
+  found used by adversaries during a ransomware event and a precursor to deleting
+  the shadowstorage.
+","detections\endpoint\ssa___resize_shadowstorage_volume.yml"
+"Sdelete Application Execution","T1485|T1070.004|T1070","fcc52b9a-4616-11ec-8454-acde48001122","This analytic will detect the execution of sdelete.exe attempting to
+  delete potentially important files that may related to adversary or insider threats
+  to destroy evidence or information sabotage. Sdelete is a SysInternals utility meant
+  to securely delete files on disk. This tool is commonly used to clear tracks and
+  artifact on the targeted host.
+","detections\endpoint\ssa___sdelete_application_execution.yml"
+"System Process Running from Unexpected Location",T1036,"28179107-099a-464a-94d3-08301e6c055f","An attacker tries might try to use different version of a system command
+  without overriding original, or they might try to avoid some detection running the
+  process from a different folder. This detection checks that a list of system processes
+  run inside C:\\Windows\System32 or C:\\Windows\SysWOW64 The list of system processes
+  has been extracted from https://github.com/splunk/security_content/blob/develop/lookups/is_windows_system_file.csv
+  and the original detection https://github.com/splunk/security_content/blob/develop/detections/system_processes_run_from_unexpected_locations.yml
+","detections\endpoint\ssa___system_process_running_from_unexpected_location.yml"
+"WevtUtil Usage To Clear Logs","T1070|T1070.001","5438113c-cdd9-11eb-93b8-acde48001122","The wevtutil.exe application is the windows event log utility. This searches
+  for wevtutil.exe with parameters for clearing the application, security, setup,
+  powershell, sysmon, or system event logs.
+","detections\endpoint\ssa___wevtutil_usage_to_clear_logs.yml"
+"Wevtutil Usage To Disable Logs","T1070|T1070.001","a4bdc944-cdd9-11eb-ac97-acde48001122","This search is to detect execution of wevtutil.exe to disable logs. This
+  technique was seen in several ransomware to disable the event logs to evade alerts
+  and detections in compromised host.
+","detections\endpoint\ssa___wevtutil_usage_to_disable_logs.yml"
+"Windows DotNet Binary in Non Standard Path","T1036|T1036.003|T1218|T1218.004","21179107-099a-324a-94d3-08301e6c065f","The following analytic identifies native .net binaries within the Windows
+  operating system that may be abused by adversaries by moving it to a new directory.
+  The analytic identifies the .net binary by using a list. If one or the other matches an alert will be generated. Adversaries abuse
+  these binaries as they are native to Windows and native DotNet. Note that not all
+  SDK (post install of Windows) are captured in the list. Lookup - https://github.com/splunk/security_content/blob/develop/lookups/is_net_windows_file.csv.
+","detections\endpoint\ssa___windows_dotnet_binary_in_non_standard_path.yml"
+"Suspicious Computer Account Name Change","T1078|T1078.002","35a61ed8-61c4-11ec-bc1e-acde48001122","As part of the sAMAccountName Spoofing (CVE-2021-42278) and Domain Controller
+  Impersonation (CVE-2021-42287) exploitation chain, adversaries need to create a
+  new computer account name and rename it to match the name of a domain controller
+  account without the ending '$'. In Windows Active Directory environments, computer
+  account names always end with `$`. This analytic leverages Event Id 4781, `The name
+  of an account was changed`, to identify a computer account rename event with a suspicious
+  name that does not terminate with `$`. This behavior could represent an exploitation
+  attempt of CVE-2021-42278 and CVE-2021-42287 for privilege escalation.
+","detections\endpoint\suspicious_computer_account_name_change.yml"
+"Suspicious Copy on System32","T1036.003|T1036","ce633e56-25b2-11ec-9e76-acde48001122","This analytic is to detect a suspicious copy of file from systemroot
+  folder of the windows OS. This technique is commonly used by APT or other malware
+  as part of execution (LOLBIN) to run its malicious code using the available legitimate
+  tool in OS. this type of event may seen or may execute of normal user in some instance
+  but this is really a anomaly that needs to be check within the network.
+","detections\endpoint\suspicious_copy_on_system32.yml"
+"Suspicious Event Log Service Behavior","T1070|T1070.001","2b85aa3d-f5f6-4c2e-a081-a09f6e1c2e40","The following analytic utilizes Windows Event ID 1100 to identify when
+  Windows event log service is shutdown. Note that this is a voluminous analytic that
+  will require tuning or restricted to specific endpoints based on criticality. This
+  event generates every time Windows Event Log service has shut down. It also generates
+  during normal system shutdown. During triage, based on time of day and user, determine
+  if this was planned. If not planned, follow through with reviewing parallel alerts
+  and other data sources to determine what else may have occurred.
+","detections\endpoint\suspicious_event_log_service_behavior.yml"
+"Suspicious Image Creation In Appdata Folder",T1113,"f6f904c4-1ac0-11ec-806b-acde48001122","This search is to detect a suspicious creation of image in appdata folder
+  made by process that also has a file reference in appdata folder. This technique
+  was seen in remcos rat that capture screenshot of the compromised machine and place
+  it in the appdata and will be send to its C2 server. This TTP is really a good indicator
+  to check that process because it is in suspicious folder path and image files are
+  not commonly created by user in this folder path.
+","detections\endpoint\suspicious_image_creation_in_appdata_folder.yml"
+"Suspicious Kerberos Service Ticket Request","T1078|T1078.002","8b1297bc-6204-11ec-b7c4-acde48001122","As part of the sAMAccountName Spoofing (CVE-2021-42278) and Domain Controller
+  Impersonation (CVE-2021-42287) exploitation chain, adversaries will request and
+  obtain a Kerberos Service Ticket (TGS) with a domain controller computer account
+  as the Service Name. This Service Ticket can be then used to take control of the
+  domain controller on the final part of the attack. This analytic leverages Event
+  Id 4769, `A Kerberos service ticket was requested`, to identify an unusual TGS request
+  where the Account_Name requesting the ticket matches the Service_Name field. This
+  behavior could represent an exploitation attempt of CVE-2021-42278 and CVE-2021-42287
+  for privilege escalation.
+","detections\endpoint\suspicious_kerberos_service_ticket_request.yml"
+"Suspicious Linux Discovery Commands","T1059.004","0edd5112-56c9-11ec-b990-acde48001122","'This search, detects execution of suspicious bash commands from various
+  commonly leveraged bash scripts like (AutoSUID, LinEnum, LinPeas) to perform discovery
+  of possible paths of privilege execution, password files, vulnerable directories,
+  executables and file permissions on a Linux host.\
+  The search logic specifically looks for high number of distinct commands run in
+  a short period of time.'
+","detections\endpoint\suspicious_linux_discovery_commands.yml"
+"Suspicious microsoft workflow compiler rename","T1036|T1127|T1036.003","f0db4464-55d9-11eb-ae93-0242ac130002","The following analytic identifies a renamed instance of microsoft.workflow.compiler.exe.
+  Microsoft.workflow.compiler.exe is natively found in C:\Windows\Microsoft.NET\Framework64\v4.0.30319
+  and is rarely utilized. When investigating, identify the executed code on disk and
+  review. A spawned child process from microsoft.workflow.compiler.exe is uncommon.
+  In any instance, microsoft.workflow.compiler.exe spawning from an Office product
+  or any living off the land binary is highly suspect.
+","detections\endpoint\suspicious_microsoft_workflow_compiler_rename.yml"
+"Suspicious msbuild path","T1036|T1127|T1036.003|T1127.001","f5198224-551c-11eb-ae93-0242ac130002","The following analytic identifies msbuild.exe executing from a non-standard
+  path. Msbuild.exe is natively found in C:\Windows\Microsoft.NET\Framework\v4.0.30319
+  and C:\Windows\Microsoft.NET\Framework64\v4.0.30319. Instances of Visual Studio
+  will run a copy of msbuild.exe. A moved instance of MSBuild is suspicious, however
+  there are instances of build applications that will move or use a copy of MSBuild.
+","detections\endpoint\suspicious_msbuild_path.yml"
+"Suspicious MSBuild Rename","T1036|T1127|T1036.003|T1127.001","4006adac-5937-11eb-ae93-0242ac130002","The following analytic identifies renamed instances of msbuild.exe executing.
+  Msbuild.exe is natively found in C:\Windows\Microsoft.NET\Framework\v4.0.30319 and
+  C:\Windows\Microsoft.NET\Framework64\v4.0.30319. During investigation, identify
+  the code executed and what is executing a renamed instance of MSBuild.
+","detections\endpoint\suspicious_msbuild_rename.yml"
+"Suspicious Process DNS Query Known Abuse Web Services","T1059.005|T1059","3cf0dc36-484d-11ec-a6bc-acde48001122","This analytic detects a suspicious process making a DNS query via known,
+  abused text-paste web services, VoIP, instant messaging, and digital distribution
+  platforms used to download external files. This technique is abused by adversaries,
+  malware actors, and red teams to download a malicious file on the target host. This
+  is a good TTP indicator for possible initial access techniques. A user will experience
+  false positives if the following instant messaging is allowed or common applications
+  like telegram or discord are allowed in the corporate network.
+","detections\endpoint\suspicious_process_dns_query_known_abuse_web_services.yml"
+"Suspicious Process With Discord DNS Query","T1059.005|T1059","4d4332ae-792c-11ec-89c1-acde48001122","This analytic identifies a process making a DNS query to Discord, a well
+  known instant messaging and digital distribution platform. Discord can be abused
+  by adversaries, as seen in the WhisperGate campaign, to host and download malicious.
+  external files. A process resolving a Discord DNS name could be an indicator of
+  malware trying to download files from Discord for further execution.
+","detections\endpoint\suspicious_process_with_discord_dns_query.yml"
+"Suspicious Ticket Granting Ticket Request","T1078|T1078.002","d77d349e-6269-11ec-9cfe-acde48001122","As part of the sAMAccountName Spoofing (CVE-2021-42278) and Domain Controller
+  Impersonation (CVE-2021-42287) exploitation chain, adversaries will need to request
+  a Kerberos Ticket Granting Ticket (TGT) on behalf of the newly created and renamed
+  computer account. The TGT request will be preceded by a computer account name event.
+  This analytic leverages Event Id 4781, `The name of an account was changed` and
+  event Id 4768 `A Kerberos authentication ticket (TGT) was requested` to correlate
+  a sequence of events where the new computer account on event id 4781 matches the
+  request account on event id 4768. This behavior could represent an exploitation
+  attempt of CVE-2021-42278 and CVE-2021-42287 for privilege escalation.
+","detections\endpoint\suspicious_ticket_granting_ticket_request.yml"
+"Suspicious WAV file in Appdata Folder",T1113,"5be109e6-1ac5-11ec-b421-acde48001122","This analytic is to detect a suspicious creation of .wav file in appdata
+  folder. This behavior was seen in Remcos RAT malware where it put the audio recording
+  in the appdata\audio folde as part of data collection. this recording can be send
+  to its C2 server as part of its exfiltration to the compromised machine. creation
+  of wav files in this folder path is not a ussual disk place used by user to save
+  audio format file.
+","detections\endpoint\suspicious_wav_file_in_appdata_folder.yml"
+"Suspicious wevtutil Usage","T1070.001|T1070","2827c0fd-e1be-4868-ae25-59d28e0f9d4f","The wevtutil.exe application is the windows event log utility. This searches
+  for wevtutil.exe with parameters for clearing the application, security, setup,
+  trace or system event logs.
+","detections\endpoint\suspicious_wevtutil_usage.yml"
+"Suspicious writes to windows Recycle Bin",T1036,"b5541828-8ffd-4070-9d95-b3da4de924cb","This search detects writes to the recycle bin by a process other than
+  explorer.exe.
+","detections\endpoint\suspicious_writes_to_windows_recycle_bin.yml"
+"System Info Gathering Using Dxdiag Application",T1592,"f92d74f2-4921-11ec-b685-acde48001122","This analytic is to detect a suspicious dxdiag.exe process command-line
+  execution. Dxdiag is used to collect the system info of the target host. This technique
+  has been used by Remcos RATS, various actors, and other malware to collect information
+  as part of the recon or collection phase of an attack. This behavior should rarely
+  be seen in a corporate network, but this command line can be used by a network administrator
+  to audit host machine specifications. Thus in some rare cases, this detection will
+  contain false positives in its results. To triage further, analyze what commands
+  were passed after it pipes out the result to a file for further processing.
+","detections\endpoint\system_info_gathering_using_dxdiag_application.yml"
+"System Processes Run From Unexpected Locations","T1036|T1036.003","a34aae96-ccf8-4aef-952c-3ea21444444d","'This search looks for system processes that typically execute from `C:\Windows\System32\`
+  or `C:\Windows\SysWOW64`.  This may indicate a malicious process that is trying
+  to hide as a legitimate process.\
+  This detection utilizes a lookup that is deduped `system32` and `syswow64` directories
+  from Server 2016 and Windows 10.\
+  During triage, review the parallel processes - what process moved the native Windows
+  binary? identify any artifacts on disk and review. If a remote destination is contacted,
+  what is the reputation?'
+","detections\endpoint\system_processes_run_from_unexpected_locations.yml"
+"Unified Messaging Service Spawning a Process",T1190,"f1126df0-7bd5-11eb-988f-acde48001122","This detection identifies Microsoft Exchange Server's Unified Messaging
+  services, umworkerprocess.exe and umservice.exe, spawning a child process, indicating
+  possible exploitation of CVE-2021-26857 vulnerability. The query filters out werfault.exe
+  and wermgr.exe mostly due to potential false positives, however, if there is an
+  excessive amount of ""wermgr.exe"" or ""WerFault.exe"" failures, it may be due to the
+  active exploitation. During triage, identify any additional suspicious parallel
+  processes. Identify any recent out of place file modifications. Review Exchange
+  logs following Microsofts guide. To contain, perform egress filtering or restrict
+  public access to Exchange. In final, patch the vulnerablity and monitor.
+","detections\endpoint\unified_messaging_service_spawning_a_process.yml"
+"Unloading AMSI via Reflection","T1562|T1059.001|T1059","a21e3484-c94d-11eb-b55b-acde48001122","'The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify suspicious PowerShell execution. Script Block Logging captures the command
+  sent to PowerShell, the full command to be executed. Upon enabling, logs will output
+  to Windows event logs. Dependent upon volume, enable on critical endpoints or all.
+  \
+  This analytic identifies the behavior of AMSI being tampered with. Implemented natively
+  in many frameworks, the command will look similar to `SEtValuE($Null,(New-OBJEct
+  COLlECtionS.GenerIC.HAshSEt{[StrINg]))}$ReF=[ReF].AsSeMbLY.GeTTyPe(""System.Management.Automation.Amsi""+""Utils"")`
+  taken from Powershell-Empire. \
+  During triage, review parallel processes using an EDR product or 4688 events. It
+  will be important to understand the timeline of events around this activity. Review
+  the entire logged PowerShell script block.'
+","detections\endpoint\unloading_amsi_via_reflection.yml"
+"USN Journal Deletion",T1070,"b6e0ff70-b122-4227-9368-4cf322ab43c3","The fsutil.exe application is a legitimate Windows utility used to perform
+  tasks related to the file allocation table (FAT) and NTFS file systems. The update
+  sequence number (USN) change journal provides a log of all changes made to the files
+  on the disk. This search looks for fsutil.exe deleting the USN journal.
+","detections\endpoint\usn_journal_deletion.yml"
+"Vbscript Execution Using Wscript App","T1059.005|T1059","35159940-228f-11ec-8a49-acde48001122","This analytic is to detect a suspicious wscript commandline to execute
+  vbscript. This technique was seen in several malware to execute malicious vbs file
+  using wscript application. commonly vbs script is associated to cscript process
+  and this can be a technique to evade process parent child detections or even some
+  av script emulation system.
+","detections\endpoint\vbscript_execution_using_wscript_app.yml"
+"Wermgr Process Connecting To IP Check Web Services","T1590|T1590.005","ed313326-a0f9-11eb-a89c-acde48001122","this search is designed to detect suspicious wermgr.exe process that
+  tries to connect to known IP web services. This technique is know for trickbot and
+  other trojan spy malware to recon the infected machine and look for its ip address
+  without so much finger print on the commandline process. Since wermgr.exe is designed
+  for error handling process of windows it is really suspicious that this process
+  is trying to connect to this IP web services cause that maybe cause of some malicious
+  code injection.
+","detections\endpoint\wermgr_process_connecting_to_ip_check_web_services.yml"
+"Windows AdFind Exe",T1018,"bd3b0187-189b-46c0-be45-f52da2bae67f","'This search looks for the execution of `adfind.exe` with command-line
+  arguments that it uses by default. Specifically the filter or search functions.
+  It also considers the arguments necessary like objectcategory, see readme for more
+  details: https://www.joeware.net/freetools/tools/adfind/usage.htm. This has been
+  seen used before by Wizard Spider, FIN6 and actors whom also launched SUNBURST.
+  AdFind.exe is usually used a recon tool to enumare a domain controller.'
+","detections\endpoint\windows_adfind_exe.yml"
+"Office Product Spawning Wmic","T1566|T1566.001","ffc236d6-a6c9-11eb-95f1-acde48001122","The following detection identifies the latest behavior utilized by Ursnif
+  malware family. This detection identifies any Windows Office Product spawning `wmic.exe`.
+  In malicious instances, the command-line of `wmic.exe` will contain `wmic process
+  call create`. In addition, Threat Research has released a detection identifying
+  the use of `wmic process call create` on the command-line of `wmic.exe`. In this
+  instance, we narrow our detection down to the Office suite as a parent process.
+  During triage, review all file modifications. Capture and analyze any artifacts
+  on disk. The Office Product, or `wmic.exe` will have reached out to a remote destination,
+  capture and block the IPs or domain. Review additional parallel processes for further
+  activity.
+","detections\endpoint\office_product_spawning_wmic.yml"
+"Windows DiskCryptor Usage",T1486,"d56fe0c8-4650-11ec-a8fa-acde48001122","The following analytic identifies DiskCryptor  process name of dcrypt.exe
+  or internal name dcinst.exe. This utility has been utilized by adversaries to encrypt
+  disks manually during an operation. In addition, during install, a dcrypt.sys driver
+  is installed and requires a reboot in order to take effect. There are no command-line
+  arguments used.
+","detections\endpoint\windows_diskcryptor_usage.yml"
+"Windows DotNet Binary in Non Standard Path","T1036|T1036.003|T1218|T1218.004","fddf3b56-7933-11ec-98a6-acde48001122","The following analytic identifies native .net binaries within the Windows
+  operating system that may be abused by adversaries by moving it to a new directory.
+  The analytic identifies the .net binary by using a lookup and compares the process
+  name and original file name (internal name). The analytic utilizes a lookup with
+  the is_net_windows_file macro to identify the binary process name and original file
+  name. if one or the other matches an alert will be generated. Adversaries abuse
+  these binaries as they are native to windows and native DotNet. Note that not all
+  SDK (post install of Windows) are captured in the lookup.
+","detections\endpoint\windows_dotnet_binary_in_non_standard_path.yml"
+"Windows Drivers Loaded by Signature","T1014|T1068","d2d4af6a-6c2b-4d79-80c5-fc2cf12a2f68","The following analytic assists with viewing all drivers being loaded by using Sysmon EventCode 6 (Driver Load). Sysmon provides some simple fields to assist with identifying suspicious drivers.
+  Use this analytic to look at prevalence of driver (count), path of driver, signature status and hash. Review these fields with scrutiny until the ability to prove the driver is legitimate and has a purpose in the environment.
+","detections\endpoint\windows_drivers_loaded_by_signature.yml"
+"Windows Driver Load Non-Standard Path",T1014,"9216ef3d-066a-4958-8f27-c84589465e62","The following analytic uses Windows EventCode 7045 to identify new Kernel Mode Drivers being loaded in Windows from a non-standard path.
+  Note that, adversaries may move malicious or vulnerable drivers into these paths and load up. The idea is that this analytic provides visibility into drivers loading in non-standard file paths.
+","detections\endpoint\windows_driver_load_non_standard_path.yml"
+"Windows Event Log Cleared","T1070|T1070.001","ad517544-aff9-4c96-bd99-d6eb43bfbb6a","The following analytic utilizes Windows Security Event ID 1102 or System
+  log event 104 to identify when a Windows event log is cleared. Note that this analytic
+  will require tuning or restricted to specific endpoints based on criticality. During
+  triage, based on time of day and user, determine if this was planned. If not planned,
+  follow through with reviewing parallel alerts and other data sources to determine
+  what else may have occurred.
+","detections\endpoint\windows_event_log_cleared.yml"
+"Windows File Without Extension In Critical Folder",T1485,"0dbcac64-963c-11ec-bf04-acde48001122","This analytic is to look for suspicious file creation in the critical
+  folder like ""System32\Drivers"" folder without file extension. This artifacts was
+  seen in latest hermeticwiper where it drops its driver component in Driver Directory
+  both the compressed(without file extension) and the actual driver component (with
+  .sys file extension). This TTP is really a good indication that a host might be
+  compromised by this destructive malware that wipes the boot sector of the system.
+","detections\endpoint\windows_file_without_extension_in_critical_folder.yml"
+"Windows Get-AdComputer Unconstrained Delegation Discovery",T1018,"c8640777-469f-4638-ab44-c34a3233ffac","The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify the Get-ADComputer commandlet used with specific parameters to discover Windows endpoints with Kerberos Unconstrained Delegation.
+  Red Teams and adversaries alike may leverage use this technique for situational awareness and Active Directory Discovery.
+","detections\endpoint\windows_get_adcomputer_unconstrained_delegation_discovery.yml"
+"Windows High File Deletion Frequency",T1485,"45b125c4-866f-11eb-a95a-acde48001122","This search looks for high frequency of file deletion relative to process
+  name and process id. These events usually happen when the ransomware tries to encrypt
+  the files with the ransomware file extensions and sysmon treat the original files
+  to be deleted as soon it was replace as encrypted data.
+","detections\endpoint\windows_high_file_deletion_frequency.yml"
+"Windows InstallUtil in Non Standard Path","T1036|T1036.003|T1218|T1218.004","dcf74b22-7933-11ec-857c-acde48001122","The following analytic identifies the Windows binary InstallUtil.exe
+  running from a non-standard location. The analytic utilizes a macro for InstallUtil
+  and identifies both the process_name and original_file_name.
+","detections\endpoint\windows_installutil_in_non_standard_path.yml"
+"Windows ISO LNK File Creation","T1566.001|T1566|T1204.001|T1204","d7c2c09b-9569-4a9e-a8b6-6a39a99c1d32","The following analytic identifies the use of a delivered ISO file that has been mounted and the afformention lnk or file opened within it. When the ISO file is opened, the files are saved in the %USER%\AppData\Local\Temp\<random folder name>\ path. 
+  The analytic identifies .iso.lnk written to the path. The name of the ISO file is prepended. 
+","detections\endpoint\windows_iso_lnk_file_creation.yml"
+"Windows PowerView Constrained Delegation Discovery",T1018,"86dc8176-6e6c-42d6-9684-5444c6557ab3","The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify commandlets used by the PowerView hacking tool leveraged to discover Windows endpoints with Kerberos Constrained Delegation.
+  Red Teams and adversaries alike may leverage use this technique for situational awareness and Active Directory Discovery.
+","detections\endpoint\windows_powerview_constrained_delegation_discovery.yml"
+"Windows PowerView Unconstrained Delegation Discovery",T1018,"fbf9e47f-e531-4fea-942d-5c95af7ed4d6","The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify commandlets used by the PowerView hacking tool leveraged to discover Windows endpoints with Kerberos Unconstrained Delegation.
+  Red Teams and adversaries alike may leverage use this technique for situational awareness and Active Directory Discovery.
+","detections\endpoint\windows_powerview_unconstrained_delegation_discovery.yml"
+"Windows Processes Killed By Industroyer2 Malware",T1489,"d8bea5ca-9d4a-4249-8b56-64a619109835","The following analytic is to look for known processes killed by industroyer2 malware. 
+  This technique was seen in the industroyer2 malware attack that tries to kill several processes 
+  of windows host machines related to the energy facility network. This anomaly might be a good 
+  indicator to check which process kill these processes or why the process was killed.
+","detections\endpoint\windows_processes_killed_by_industroyer2_malware.yml"
+"Windows Raw Access To Disk Volume Partition","T1561.002|T1561","a85aa37e-9647-11ec-90c5-acde48001122","This analytic is to look for suspicious raw access read to device disk
+  partition of the host machine. This technique was seen in several attacks by adversaries
+  or threat actor to wipe, encrypt or overwrite the boot sector of each partition
+  as part of their impact payload for example the ""hermeticwiper"" malware. This detection
+  is a good indicator that there is a process try to read or write on boot sector.
+","detections\endpoint\windows_raw_access_to_disk_volume_partition.yml"
+"Windows Raw Access To Master Boot Record Drive","T1561.002|T1561","7b83f666-900c-11ec-a2d9-acde48001122","This analytic is to look for suspicious raw access read to drive where
+  the master boot record is placed. This technique was seen in several attacks by
+  adversaries or threat actor to wipe, encrypt or overwrite the master boot record
+  code as part of their impact payload. This detection is a good indicator that there
+  is a process try to read or write on MBR sector.
+","detections\endpoint\windows_raw_access_to_master_boot_record_drive.yml"
+"Potential password in username","T1078.003|T1552.001","5ced34b4-ab32-4bb0-8f22-3b8f186f0a38","This search identifies users who have entered their passwords in username
+  fields. This is done by looking for failed authentication attempts using usernames with a length 
+  longer than 7 characters and a high Shannon entropy, and looks for the next successful
+  authentication attempt from the same source system to the same destination system
+  as the failed attempt.
+","detections\endpoint\potential_password_in_username.yml"
+"Windows LOLBin Binary in Non Standard Path","T1036|T1036.003|T1218|T1218.004","25689101-012a-324a-94d3-08301e6c065a","The following analytic identifies native living off the land binaries within the Windows
+  operating system that may be abused by adversaries by moving it to a new directory.
+  The list of binaries was derived from the https://lolbas-project.github.io site, and excluded common process names (cmd.exe, explorer.exe, csc.exe, hh.exe, regedit.exe) and DotNet binaries. It also does not include the category of OtherMSBinaries.
+","detections\endpoint\ssa___windows_lolbin_binary_in_non_standard_path.yml"
+"Windows Office Product Spawning MSDT","T1566|T1566.001","127eba64-c981-40bf-8589-1830638864a7","The following analytic identifies a Microsoft Office product spawning the Windows msdt.exe process. MSDT is a Diagnostics Troubleshooting Wizard native to Windows. This behavior is related to a recently identified sample utilizing protocol handlers to evade preventative controls, including if macros are disabled in the document.
+  During triage, review file modifications for html. In addition, parallel processes including PowerShell and CertUtil.
+","detections\endpoint\windows_office_product_spawning_msdt.yml"
+"Windows Service Create Kernel Mode Driver","T1543.003|T1543|T1068","0b4e3b06-1b2b-4885-b752-cf06d12a90cb","The following analytic identifes a new kernel driver being added to Windows using sc.exe. 
+  Adding a Kernel driver is not common day to day and should be investigated to further understand the source.
+","detections\endpoint\windows_service_create_kernel_mode_driver.yml"
+"Kerberos User Enumeration","T1589|T1589.002","d82d4af4-a0bd-11ec-9445-3e22fbd008af","The following analytic leverages Event Id 4768, A Kerberos authentication ticket (TGT) was requested, to identify 
+  one source endpoint trying to obtain an unusual number Kerberos TGT ticket for non existing users. This behavior could represent an adversary 
+  abusing the Kerberos protocol to perform a user enumeration attack against an Active Directory environment. When Kerberos is sent a TGT request
+  with no preauthentication for an invalid username, it responds with KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN or 0x6. Red teams and adversaries alike
+  may abuse the Kerberos protocol to validate a list of users use them to perform further attacks.\
+  The detection calculates the standard deviation for each host and leverages the
+  3-sigma statistical rule to identify an unusual number requests. To customize this
+  analytic, users can try different combinations of the `bucket` span time and the
+  calculation of the `upperBound` field.
+","detections\endpoint\kerberos_user_enumeration.yml"
+"Linux Deletion of SSL Certificate","T1485|T1070.004|T1070","839ab790-a60a-4f81-bfb3-02567063f615","This analytic is to detect a deletion of ssl certificate in a linux machine. 
+  attacker may delete or modify ssl certificate to impair some security features or act as defense evasion in compromised linux machine. 
+  This Anomaly can be also a good indicator of a malware trying to wipe or delete several files in a compromised host as part of its destructive payload like what 
+  acidrain malware does in linux or router machines. This detection can be a good pivot to check what process and user 
+  tries to delete this type of files which is not so common and need further investigation.
+","detections\endpoint\linux_deletion_of_ssl_certificate.yml"
+"Office Application Drop Executable","T1566|T1566.001","73ce70c4-146d-11ec-9184-acde48001122","This search is to detect a suspicious MS office application that drop
+  or create executables or script in the host. This behavior is commonly seen in spear
+  phishing office attachment where it drop malicious files or script to compromised
+  the host. It might be some normal macro may drop script or tools as part of automation
+  but still this behavior is reallly suspicious and not commonly seen in normal office
+  application
+","detections\endpoint\office_application_drop_executable.yml"
+"Office Application Spawn Regsvr32 process","T1566|T1566.001","2d9fc90c-f11f-11eb-9300-acde48001122","this detection was designed to identifies suspicious spawned process
+  of known MS office application due to macro or malicious code. this technique can
+  be seen in so many malware like IcedID that used MS office as its weapon or attack
+  vector to initially infect the machines.
+","detections\endpoint\office_application_spawn_regsvr32_process.yml"
+"Office Document Creating Schedule Task","T1566|T1566.001","cc8b7b74-9d0f-11eb-8342-acde48001122","this search detects a potential malicious office document that create
+  schedule task entry through macro VBA api or through loading taskschd.dll. This
+  technique was seen in so many malicious macro malware that create persistence ,
+  beaconing using task schedule malware entry The search will return the first time
+  and last time the task was registered, as well as the `Command` to be executed,
+  `Task Name`, `Author`, `Enabled`, and whether it is `Hidden` or not. schtasks.exe
+  is natively found in `C:\Windows\system32` and `C:\Windows\syswow64`. The following
+  DLL(s) are loaded when schtasks.exe or TaskService is launched -`taskschd.dll`.
+  If found loaded by another process, it's possible a scheduled task is being registered
+  within that process context in memory. Upon triage, identify the task scheduled
+  source. Was it schtasks.exe or via TaskService? Review the job created and the Command
+  to be executed. Capture any artifacts on disk and review. Identify any parallel
+  processes within the same timeframe to identify source.'
+","detections\endpoint\office_document_creating_schedule_task.yml"
+"Office Document Executing Macro Code","T1566|T1566.001","b12c89bc-9d06-11eb-a592-acde48001122","this detection was designed to identifies suspicious office documents
+  that using macro code. Macro code is known to be one of the prevalent weaponization
+  or attack vector of threat actor. This malicious macro code is embed to a office
+  document as an attachment that may execute malicious payload, download malware payload
+  or other malware component. It is really good practice to disable macro by default
+  to avoid automatically execute macro code while opening or closing a office document
+  files.
+","detections\endpoint\office_document_executing_macro_code.yml"
+"Office Document Spawned Child Process To Download","T1566|T1566.001","6fed27d2-9ec7-11eb-8fe4-aa665a019aa3","This search is to detect potential malicious office document executing
+  lolbin child process to download payload or other malware. Since most of the attacker
+  abused the capability of office document to execute living on land application to
+  blend it to the normal noise in the infected machine to cover its track.
+","detections\endpoint\office_document_spawned_child_process_to_download.yml"
+"Office Product Spawning BITSAdmin","T1566|T1566.001","e8c591f4-a6d7-11eb-8cf7-acde48001122","The following detection identifies the latest behavior utilized by different
+  malware families (including TA551, IcedID). This detection identifies any Windows
+  Office Product spawning `bitsadmin.exe`. In malicious instances, the command-line
+  of `bitsadmin.exe` will contain a URL to a remote destination or similar command-line
+  arguments as transfer, Download, priority, Foreground. In addition, Threat Research
+  has released a detections identifying suspicious use of `bitsadmin.exe`. In this
+  instance, we narrow our detection down to the Office suite as a parent process.
+  During triage, review all file modifications. Capture and analyze any artifacts
+  on disk. The Office Product, or `bitsadmin.exe` will have reached out to a remote
+  destination, capture and block the IPs or domain. Review additional parallel processes
+  for further activity.
+","detections\endpoint\office_product_spawning_bitsadmin.yml"
+"Office Product Spawning CertUtil","T1566|T1566.001","6925fe72-a6d5-11eb-9e17-acde48001122","The following detection identifies the latest behavior utilized by different
+  malware families (including TA551, IcedID). This detection identifies any Windows
+  Office Product spawning `certutil.exe`. In malicious instances, the command-line
+  of `certutil.exe` will contain a URL to a remote destination. In addition, Threat
+  Research has released a detections identifying suspicious use of `certutil.exe`.
+  In this instance, we narrow our detection down to the Office suite as a parent process.
+  During triage, review all file modifications. Capture and analyze any artifacts
+  on disk. The Office Product, or `certutil.exe` will have reached out to a remote
+  destination, capture and block the IPs or domain. Review additional parallel processes
+  for further activity.
+","detections\endpoint\office_product_spawning_certutil.yml"
+"Office Product Spawning MSHTA","T1566|T1566.001","6078fa20-a6d2-11eb-b662-acde48001122","The following detection identifies the latest behavior utilized by different
+  malware families (including TA551, IcedID). This detection identifies any Windows
+  Office Product spawning `mshta.exe`. In malicious instances, the command-line of
+  `mshta.exe` will contain the `hta` file locally, or a URL to the remote destination.
+  In addition, Threat Research has released a detections identifying suspicious use
+  of `mshta.exe`. In this instance, we narrow our detection down to the Office suite
+  as a parent process. During triage, review all file modifications. Capture and analyze
+  any artifacts on disk. The Office Product, or `mshta.exe` will have reached out
+  to a remote destination, capture and block the IPs or domain. Review additional
+  parallel processes for further activity.
+","detections\endpoint\office_product_spawning_mshta.yml"
+"Office Product Spawning Rundll32 with no DLL","T1566|T1566.001","c661f6be-a38c-11eb-be57-acde48001122","The following detection identifies the latest behavior utilized by IcedID
+  malware family. This detection identifies any Windows Office Product spawning `rundll32.exe`
+  without a `.dll` file extension. In malicious instances, the command-line of `rundll32.exe`
+  will look like `rundll32 ..\oepddl.igk2,DllRegisterServer`. In addition, Threat
+  Research has released a detection identifying the use of `DllRegisterServer` on
+  the command-line of `rundll32.exe`. In this instance, we narrow our detection down
+  to the Office suite as a parent process. During triage, review all file modifications.
+  Capture and analyze the `DLL` that was dropped to disk. The Office Product will
+  have reached out to a remote destination, capture and block the IPs or domain. Review
+  additional parallel processes for further activity.
+","detections\endpoint\office_product_spawning_rundll32_with_no_dll.yml"
+"Office Product Writing cab or inf","T1566|T1566.001","f48cd1d4-125a-11ec-a447-acde48001122","The following analytic identifies behavior related to CVE-2021-40444.
+  Whereas the malicious document will load ActiveX and download the remote payload
+  (.inf, .cab). During triage, review parallel processes and further activity on endpoint
+  to identify additional patterns. Retrieve the file modifications and analyze further.
+","detections\endpoint\office_product_writing_cab_or_inf.yml"
+"Office Spawning Control","T1566|T1566.001","053e027c-10c7-11ec-8437-acde48001122","The following detection identifies control.exe spawning from an office
+  product. This detection identifies any Windows Office Product spawning `control.exe`.
+  In malicious instances, the command-line of `control.exe` will contain a file path
+  to a .cpl or .inf, related to CVE-2021-40444. In this instance, we narrow our detection
+  down to the Office suite as a parent process. During triage, review all file modifications.
+  Capture and analyze any artifacts on disk. review parallel and child processes to
+  identify further suspicious behavior
+","detections\endpoint\office_spawning_control.yml"
+"Outbound Network Connection from Java Using Default Ports",T1190,"d2c14d28-5c47-11ec-9892-acde48001122","A required step while exploiting the CVE-2021-44228-Log4j vulnerability
+  is that the victim server will perform outbound connections to attacker-controlled
+  infrastructure. This is required as part of the JNDI lookup as well as for retrieving
+  the second stage .class payload. The following analytic identifies the Java process
+  reaching out to default ports used by the LDAP and RMI protocols. This behavior
+  could represent successfull exploitation. Note that adversaries can easily decide
+  to use arbitrary ports for these protocols and potentially bypass this detection.
+","detections\endpoint\outbound_network_connection_from_java_using_default_ports.yml"
+"Possible Lateral Movement PowerShell Spawn","T1021|T1021.003|T1021.006|T1047|T1053.005|T1543.003|T1059.001","cb909b3e-512b-11ec-aa31-3e22fbd008af","The following analytic assists with identifying a PowerShell process
+  spawned as a child or grand child process of commonly abused processes during lateral
+  movement techniques including `services.exe`, `wmiprsve.exe`, `svchost.exe`, `wsmprovhost.exe`
+  and `mmc.exe`. Legitimate Windows features such as the Service Control Manager,
+  Windows Management Instrumentation, Task Scheduler, Windows Remote Management and
+  the DCOM protocol can be abused to start a process on a remote endpoint. Looking
+  for PowerShell spawned out of this processes may reveal a lateral movement attack.
+  Red Teams and adversaries alike may abuse these services during a breach for lateral
+  movement and remote code execution.
+","detections\endpoint\possible_lateral_movement_powershell_spawn.yml"
+"Potentially malicious code on commandline","T1059.003","9c53c446-757e-11ec-871d-acde48001122","The following analytic uses a pretrained machine learning text classifier
+  to detect potentially malicious commandlines.  The model identifies unusual combinations
+  of keywords found in samples of commandlines where adversaries executed powershell
+  code, primarily for C2 communication.  For example, adversaries will leverage IO
+  capabilities such as ""streamreader"" and ""webclient"", threading capabilties such
+  as ""mutex"" locks, programmatic constructs like ""function"" and ""catch"", and cryptographic
+  operations like ""computehash"".  Although observing one of these keywords in a commandline
+  script is possible, combinations of keywords observed in attack data are not typically
+  found in normal usage of the commandline.  The model will output a score where all
+  values above zero are suspicious, anything greater than one particularly so.
+","detections\endpoint\potentially_malicious_code_on_commandline.yml"
+"PowerShell 4104 Hunting","T1059|T1059.001","d6f2b006-0041-11ec-8885-acde48001122","The following Hunting analytic assists with identifying suspicious PowerShell
+  execution using Script Block Logging, or EventCode 4104. This analytic is not meant
+  to be ran hourly, but occasionally to identify malicious or suspicious PowerShell.
+  This analytic is a combination of work completed by Alex Teixeira and Splunk Threat
+  Research Team.
+","detections\endpoint\powershell_4104_hunting.yml"
+"Single Letter Process On Endpoint","T1204|T1204.002","a4214f0b-e01c-41bc-8cc4-d2b71e3056b4","This search looks for process names that consist only of a single letter.
+","detections\endpoint\single_letter_process_on_endpoint.yml"
+"PowerShell Domain Enumeration","T1059|T1059.001","e1866ce2-ca22-11eb-8e44-acde48001122","'The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify suspicious PowerShell execution. Script Block Logging captures the command
+  sent to PowerShell, the full command to be executed. Upon enabling, logs will output
+  to Windows event logs. Dependent upon volume, enable on critical endpoints or all.
+  \
+  This analytic identifies specific PowerShell modules typically used to enumerate
+  an organizations domain or users. \
+  During triage, review parallel processes using an EDR product or 4688 events. It
+  will be important to understand the timeline of events around this activity. Review
+  the entire logged PowerShell script block.'
+","detections\endpoint\powershell_domain_enumeration.yml"
+"Powershell Fileless Process Injection via GetProcAddress","T1059|T1055|T1059.001","a26d9db4-c883-11eb-9d75-acde48001122","'The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify suspicious PowerShell execution. Script Block Logging captures the command
+  sent to PowerShell, the full command to be executed. Upon enabling, logs will output
+  to Windows event logs. Dependent upon volume, enable no critical endpoints or all.
+  \
+  This analytic identifies `GetProcAddress` in the script block. This is not normal
+  to be used by most PowerShell scripts and is typically unsafe/malicious. Many attack
+  toolkits use GetProcAddress to obtain code execution. \
+  In use, `$var_gpa = $var_unsafe_native_methods.GetMethod(GetProcAddress` and later
+  referenced/executed elsewhere. \
+  During triage, review parallel processes using an EDR product or 4688 events. It
+  will be important to understand the timeline of events around this activity. Review
+  the entire logged PowerShell script block.'
+","detections\endpoint\powershell_fileless_process_injection_via_getprocaddress.yml"
+"Powershell Fileless Script Contains Base64 Encoded Content","T1059|T1027|T1059.001","8acbc04c-c882-11eb-b060-acde48001122","'The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify suspicious PowerShell execution. Script Block Logging captures the command
+  sent to PowerShell, the full command to be executed. Upon enabling, logs will output
+  to Windows event logs. Dependent upon volume, enable on critical endpoints or all.
+  \
+  This analytic identifies `FromBase64String` within the script block. A typical malicious
+  instance will include additional code. \
+  Command example - `[Byte[]]$var_code = [System.Convert]::FromBase64String(38uqIyMjQ6rG....`
+  \
+  During triage, review parallel processes using an EDR product or 4688 events. It
+  will be important to understand the timeline of events around this activity. Review
+  the entire logged PowerShell script block.'
+","detections\endpoint\powershell_fileless_script_contains_base64_encoded_content.yml"
+"PowerShell Loading DotNET into Memory via Reflection","T1059|T1059.001","85bc3f30-ca28-11eb-bd21-acde48001122","'The following analytic utilizes PowerShell Script Block Logging (EventCode=4104)
+  to identify suspicious PowerShell execution. Script Block Logging captures the command
+  sent to PowerShell, the full command to be executed. Upon enabling, logs will output
+  to Windows event logs. Dependent upon volume, enable no critical endpoints or all.
+  \
+  This analytic identifies the use of PowerShell loading .net assembly via reflection.
+  This is commonly found in malicious PowerShell usage, including Empire and Cobalt
+  Strike. In addition, the `load(` value may be modifed by removing `(` and it will
+  identify more events to review. \
+  During triage, review parallel processes using an EDR product or 4688 events. It
+  will be important to understand the timeline of events around this activity. Review
+  the entire logged PowerShell script block.'
+","detections\endpoint\powershell_loading_dotnet_into_memory_via_reflection.yml"
+"Powershell Processing Stream Of Data","T1059|T1059.001","0d718b52-c9f1-11eb-bc61-acde48001122","The following analytic identifies suspicious PowerShell script execution
+  via EventCode 4104 that is processing compressed stream data. This is typically
+  found in obfuscated PowerShell or PowerShell executing embedded .NET or binary files
+  that are stream flattened and will be deflated durnig execution. During triage,
+  review parallel processes within the same timeframe. Review the full script block
+  to identify other related artifacts.
+","detections\endpoint\powershell_processing_stream_of_data.yml"
+"PowerShell - Connect To Internet With Hidden Window","T1059.001|T1059","ee18ed37-0802-4268-9435-b3b91aaa18db","The following hunting analytic identifies PowerShell commands utilizing
+  the WindowStyle parameter to hide the window on the compromised endpoint. This combination
+  of command-line options is suspicious because it is overriding the default PowerShell
+  execution policy, attempts to hide its activity from the user, and connects to the
+  Internet. Removed in this version of the query is New-Object. The analytic identifies
+  all variations of WindowStyle, as PowerShell allows the ability to shorten the parameter.
+  For example w, win, windowsty and so forth. In addition, through our research it
+  was identified that PowerShell will interpret different command switch types beyond
+  the hyphen. We have added endash, emdash, horizontal bar, and forward slash.
+","detections\endpoint\powershell___connect_to_internet_with_hidden_window.yml"

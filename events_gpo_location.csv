@@ -1,0 +1,386 @@
+EventCode,group_policy_group,group_policy_option
+4960,System,Audit IPsec Driver
+4961,System,Audit IPsec Driver
+4962,System,Audit IPsec Driver
+4963,System,Audit IPsec Driver
+4965,System,Audit IPsec Driver
+5478,System,Audit IPsec Driver
+5479,System,Audit IPsec Driver
+5480,System,Audit IPsec Driver
+5483,System,Audit IPsec Driver
+5484,System,Audit IPsec Driver
+5485,System,Audit IPsec Driver
+5024,System,Audit Other System Events
+5025,System,Audit Other System Events
+5027,System,Audit Other System Events
+5028,System,Audit Other System Events
+5029,System,Audit Other System Events
+5030,System,Audit Other System Events
+5032,System,Audit Other System Events
+5033,System,Audit Other System Events
+5034,System,Audit Other System Events
+5035,System,Audit Other System Events
+5037,System,Audit Other System Events
+5058,System,Audit Other System Events
+5059,System,Audit Other System Events
+6400,System,Audit Other System Events
+6401,System,Audit Other System Events
+6402,System,Audit Other System Events
+6403,System,Audit Other System Events
+6404,System,Audit Other System Events
+6405,System,Audit Other System Events
+6406,System,Audit Other System Events
+6407,System,Audit Other System Events
+6408,System,Audit Other System Events
+4608,System,Audit Security State Change
+4609,System,Audit Security State Change
+4616,System,Audit Security State Change
+4621,System,Audit Security State Change
+4610,System,Audit Security System Extension
+4611,System,Audit Security System Extension
+4614,System,Audit Security System Extension
+4622,System,Audit Security System Extension
+4697,System,Audit Security System Extension
+4612,System,Audit System Integrity
+4615,System,Audit System Integrity
+4618,System,Audit System Integrity
+4816,System,Audit System Integrity
+5038,System,Audit System Integrity
+5056,System,Audit System Integrity
+5057,System,Audit System Integrity
+5060,System,Audit System Integrity
+5061,System,Audit System Integrity
+5062,System,Audit System Integrity
+6281,System,Audit System Integrity
+4672,Privilege Use,Audit Non-Sensitive Privilege Use
+4673,Privilege Use,Audit Non-Sensitive Privilege Use
+4674,Privilege Use,Audit Non-Sensitive Privilege Use
+4672,Privilege Use,Audit Sensitive Privilege Use
+4673,Privilege Use,Audit Sensitive Privilege Use
+4674,Privilege Use,Audit Sensitive Privilege Use
+N/A,Privilege Use,Audit Other Privilege Use Events
+4715,Policy Change,Audit Audit Policy Change
+4719,Policy Change,Audit Audit Policy Change
+4817,Policy Change,Audit Audit Policy Change
+4902,Policy Change,Audit Audit Policy Change
+4904,Policy Change,Audit Audit Policy Change
+4905,Policy Change,Audit Audit Policy Change
+4906,Policy Change,Audit Audit Policy Change
+4907,Policy Change,Audit Audit Policy Change
+4908,Policy Change,Audit Audit Policy Change
+4912,Policy Change,Audit Audit Policy Change
+4713,Policy Change,Audit Authentication Policy Change
+4716,Policy Change,Audit Authentication Policy Change
+4717,Policy Change,Audit Authentication Policy Change
+4718,Policy Change,Audit Authentication Policy Change
+4739,Policy Change,Audit Authentication Policy Change
+4864,Policy Change,Audit Authentication Policy Change
+4865,Policy Change,Audit Authentication Policy Change
+4866,Policy Change,Audit Authentication Policy Change
+4867,Policy Change,Audit Authentication Policy Change
+4704,Policy Change,Audit Authorization Policy Change
+4705,Policy Change,Audit Authorization Policy Change
+4706,Policy Change,Audit Authorization Policy Change
+4707,Policy Change,Audit Authorization Policy Change
+4714,Policy Change,Audit Authorization Policy Change
+4709,Policy Change,Audit Filtering Platform Policy Change
+4710,Policy Change,Audit Filtering Platform Policy Change
+4711,Policy Change,Audit Filtering Platform Policy Change
+4712,Policy Change,Audit Filtering Platform Policy Change
+5040,Policy Change,Audit Filtering Platform Policy Change
+5041,Policy Change,Audit Filtering Platform Policy Change
+5042,Policy Change,Audit Filtering Platform Policy Change
+5043,Policy Change,Audit Filtering Platform Policy Change
+5044,Policy Change,Audit Filtering Platform Policy Change
+5045,Policy Change,Audit Filtering Platform Policy Change
+5046,Policy Change,Audit Filtering Platform Policy Change
+5047,Policy Change,Audit Filtering Platform Policy Change
+5048,Policy Change,Audit Filtering Platform Policy Change
+5440,Policy Change,Audit Filtering Platform Policy Change
+5441,Policy Change,Audit Filtering Platform Policy Change
+6419,Detailed Tracking,Audit PNP Activity
+6420,Detailed Tracking,Audit PNP Activity
+6421,Detailed Tracking,Audit PNP Activity
+6422,Detailed Tracking,Audit PNP Activity
+5442,Policy Change,Audit Filtering Platform Policy Change
+5443,Policy Change,Audit Filtering Platform Policy Change
+5444,Policy Change,Audit Filtering Platform Policy Change
+5446,Policy Change,Audit Filtering Platform Policy Change
+5448,Policy Change,Audit Filtering Platform Policy Change
+5449,Policy Change,Audit Filtering Platform Policy Change
+5450,Policy Change,Audit Filtering Platform Policy Change
+5456,Policy Change,Audit Filtering Platform Policy Change
+5457,Policy Change,Audit Filtering Platform Policy Change
+5458,Policy Change,Audit Filtering Platform Policy Change
+5459,Policy Change,Audit Filtering Platform Policy Change
+5460,Policy Change,Audit Filtering Platform Policy Change
+5461,Policy Change,Audit Filtering Platform Policy Change
+5462,Policy Change,Audit Filtering Platform Policy Change
+5463,Policy Change,Audit Filtering Platform Policy Change
+5464,Policy Change,Audit Filtering Platform Policy Change
+5465,Policy Change,Audit Filtering Platform Policy Change
+5466,Policy Change,Audit Filtering Platform Policy Change
+5467,Policy Change,Audit Filtering Platform Policy Change
+5468,Policy Change,Audit Filtering Platform Policy Change
+5471,Policy Change,Audit Filtering Platform Policy Change
+5472,Policy Change,Audit Filtering Platform Policy Change
+5473,Policy Change,Audit Filtering Platform Policy Change
+5474,Policy Change,Audit Filtering Platform Policy Change
+5477,Policy Change,Audit Filtering Platform Policy Change
+4944,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4945,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4946,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4947,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4948,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4949,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4950,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4951,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4952,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4953,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4954,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4956,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4957,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4958,Policy Change,Audit MPSSVC Rule-Level Policy Change
+4670,Policy Change,Audit Other Policy Change Events
+4909,Policy Change,Audit Other Policy Change Events
+4910,Policy Change,Audit Other Policy Change Events
+5063,Policy Change,Audit Other Policy Change Events
+5064,Policy Change,Audit Other Policy Change Events
+5065,Policy Change,Audit Other Policy Change Events
+5066,Policy Change,Audit Other Policy Change Events
+5067,Policy Change,Audit Other Policy Change Events
+5068,Policy Change,Audit Other Policy Change Events
+5069,Policy Change,Audit Other Policy Change Events
+5070,Policy Change,Audit Other Policy Change Events
+5447,Policy Change,Audit Other Policy Change Events
+6144,Policy Change,Audit Other Policy Change Events
+6145,Policy Change,Audit Other Policy Change Events
+4665,Object Access,Audit Application Generated
+4666,Object Access,Audit Application Generated
+4667,Object Access,Audit Application Generated
+4668,Object Access,Audit Application Generated
+4868,Object Access,Audit Certification Services
+4869,Object Access,Audit Certification Services
+4870,Object Access,Audit Certification Services
+4871,Object Access,Audit Certification Services
+4872,Object Access,Audit Certification Services
+4873,Object Access,Audit Certification Services
+4874,Object Access,Audit Certification Services
+4875,Object Access,Audit Certification Services
+4876,Object Access,Audit Certification Services
+4877,Object Access,Audit Certification Services
+4878,Object Access,Audit Certification Services
+4879,Object Access,Audit Certification Services
+4880,Object Access,Audit Certification Services
+4881,Object Access,Audit Certification Services
+4882,Object Access,Audit Certification Services
+4883,Object Access,Audit Certification Services
+4884,Object Access,Audit Certification Services
+4885,Object Access,Audit Certification Services
+4886,Object Access,Audit Certification Services
+4887,Object Access,Audit Certification Services
+4888,Object Access,Audit Certification Services
+4889,Object Access,Audit Certification Services
+4890,Object Access,Audit Certification Services
+4891,Object Access,Audit Certification Services
+4892,Object Access,Audit Certification Services
+4893,Object Access,Audit Certification Services
+4894,Object Access,Audit Certification Services
+4895,Object Access,Audit Certification Services
+4896,Object Access,Audit Certification Services
+4897,Object Access,Audit Certification Services
+4898,Object Access,Audit Certification Services
+5145,Object Access,Audit Detailed File Share
+5140,Object Access,Audit File Share
+5142,Object Access,Audit File Share
+5143,Object Access,Audit File Share
+5144,Object Access,Audit File Share
+5168,Object Access,Audit File Share
+4664,Object Access,Audit File System
+4985,Object Access,Audit File System
+5051,Object Access,Audit File System
+5031,Object Access,Audit Filtering Platform Connection
+5140,Object Access,Audit Filtering Platform Connection
+5150,Object Access,Audit Filtering Platform Connection
+5151,Object Access,Audit Filtering Platform Connection
+5154,Object Access,Audit Filtering Platform Connection
+5155,Object Access,Audit Filtering Platform Connection
+5156,Object Access,Audit Filtering Platform Connection
+5157,Object Access,Audit Filtering Platform Connection
+5158,Object Access,Audit Filtering Platform Connection
+5159,Object Access,Audit Filtering Platform Connection
+5152,Object Access,Audit Filtering Platform Packet Drop
+5153,Object Access,Audit Filtering Platform Packet Drop
+4656,Object Access,Audit Handle Manipulation
+4658,Object Access,Audit Handle Manipulation
+4690,Object Access,Audit Handle Manipulation
+4659,Object Access,Audit Kernel Object
+4660,Object Access,Audit Kernel Object
+4661,Object Access,Audit Kernel Object
+4663,Object Access,Audit Kernel Object
+4671,Object Access,Audit Other Object Access Events
+4691,Object Access,Audit Other Object Access Events
+4698,Object Access,Audit Other Object Access Events
+4699,Object Access,Audit Other Object Access Events
+4700,Object Access,Audit Other Object Access Events
+4701,Object Access,Audit Other Object Access Events
+4702,Object Access,Audit Other Object Access Events
+5148,Object Access,Audit Other Object Access Events
+5149,Object Access,Audit Other Object Access Events
+5888,Object Access,Audit Other Object Access Events
+5889,Object Access,Audit Other Object Access Events
+5890,Object Access,Audit Other Object Access Events
+4657,Object Access,Audit Registry
+5039,Object Access,Audit Registry
+4659,Object Access,Audit SAM
+4660,Object Access,Audit SAM
+4661,Object Access,Audit SAM
+4663,Object Access,Audit SAM
+4625,Logon/Logoff,Audit Account Lockout
+4978,Logon/Logoff,Audit IPsec Extended Mode
+4979,Logon/Logoff,Audit IPsec Extended Mode
+4980,Logon/Logoff,Audit IPsec Extended Mode
+4981,Logon/Logoff,Audit IPsec Extended Mode
+4982,Logon/Logoff,Audit IPsec Extended Mode
+4983,Logon/Logoff,Audit IPsec Extended Mode
+4984,Logon/Logoff,Audit IPsec Extended Mode
+4646,Logon/Logoff,Audit IPsec Main Mode
+4650,Logon/Logoff,Audit IPsec Main Mode
+4651,Logon/Logoff,Audit IPsec Main Mode
+4652,Logon/Logoff,Audit IPsec Main Mode
+4653,Logon/Logoff,Audit IPsec Main Mode
+4655,Logon/Logoff,Audit IPsec Main Mode
+4976,Logon/Logoff,Audit IPsec Main Mode
+5049,Logon/Logoff,Audit IPsec Main Mode
+5453,Logon/Logoff,Audit IPsec Main Mode
+4977,Logon/Logoff,Audit IPsec Quick Mode
+5451,Logon/Logoff,Audit IPsec Quick Mode
+5452,Logon/Logoff,Audit IPsec Quick Mode
+4634,Logon/Logoff,Audit Logoff
+4647,Logon/Logoff,Audit Logoff
+4624,Logon/Logoff,Audit Logon
+4625,Logon/Logoff,Audit Logon
+4648,Logon/Logoff,Audit Logon
+4675,Logon/Logoff,Audit Logon
+6272,Logon/Logoff,Audit Network Policy Server
+6273,Logon/Logoff,Audit Network Policy Server
+6274,Logon/Logoff,Audit Network Policy Server
+6275,Logon/Logoff,Audit Network Policy Server
+6276,Logon/Logoff,Audit Network Policy Server
+6277,Logon/Logoff,Audit Network Policy Server
+6278,Logon/Logoff,Audit Network Policy Server
+6279,Logon/Logoff,Audit Network Policy Server
+6280,Logon/Logoff,Audit Network Policy Server
+4649,Logon/Logoff,Audit Other Logon/Logoff Events
+4778,Logon/Logoff,Audit Other Logon/Logoff Events
+4779,Logon/Logoff,Audit Other Logon/Logoff Events
+4800,Logon/Logoff,Audit Other Logon/Logoff Events
+4801,Logon/Logoff,Audit Other Logon/Logoff Events
+4802,Logon/Logoff,Audit Other Logon/Logoff Events
+4803,Logon/Logoff,Audit Other Logon/Logoff Events
+5378,Logon/Logoff,Audit Other Logon/Logoff Events
+5632,Logon/Logoff,Audit Other Logon/Logoff Events
+5633,Logon/Logoff,Audit Other Logon/Logoff Events
+4964,Logon/Logoff,Audit Special Logon
+4928,DS Access,Audit Detailed Directory Service Replication
+4929,DS Access,Audit Detailed Directory Service Replication
+4930,DS Access,Audit Detailed Directory Service Replication
+4931,DS Access,Audit Detailed Directory Service Replication
+4934,DS Access,Audit Detailed Directory Service Replication
+4935,DS Access,Audit Detailed Directory Service Replication
+4936,DS Access,Audit Detailed Directory Service Replication
+4937,DS Access,Audit Detailed Directory Service Replication
+4662,DS Access,Audit Directory Service Access
+5136,DS Access,Audit Directory Service Changes
+5137,DS Access,Audit Directory Service Changes
+5138,DS Access,Audit Directory Service Changes
+5139,DS Access,Audit Directory Service Changes
+5141,DS Access,Audit Directory Service Changes
+4932,DS Access,Audit Directory Service Replication
+4933,DS Access,Audit Directory Service Replication
+4692,Detailed Tracking,Audit DPAPI Activity
+4693,Detailed Tracking,Audit DPAPI Activity
+4694,Detailed Tracking,Audit DPAPI Activity
+4695,Detailed Tracking,Audit DPAPI Activity
+4688,Detailed Tracking,Audit Process Creation
+4696,Detailed Tracking,Audit Process Creation
+4689,Detailed Tracking,Audit Process Termination
+5712,Detailed Tracking,Audit RPC Events
+4783,Account Management,Audit Application Group Management
+4784,Account Management,Audit Application Group Management
+4785,Account Management,Audit Application Group Management
+4786,Account Management,Audit Application Group Management
+4787,Account Management,Audit Application Group Management
+4788,Account Management,Audit Application Group Management
+4789,Account Management,Audit Application Group Management
+4790,Account Management,Audit Application Group Management
+4741,Account Management,Audit Computer Account Management
+4742,Account Management,Audit Computer Account Management
+4743,Account Management,Audit Computer Account Management
+4744,Account Management,Audit Distribution Group Management
+4745,Account Management,Audit Distribution Group Management
+4746,Account Management,Audit Distribution Group Management
+4747,Account Management,Audit Distribution Group Management
+4748,Account Management,Audit Distribution Group Management
+4749,Account Management,Audit Distribution Group Management
+4750,Account Management,Audit Distribution Group Management
+4751,Account Management,Audit Distribution Group Management
+4752,Account Management,Audit Distribution Group Management
+4753,Account Management,Audit Distribution Group Management
+4759,Account Management,Audit Distribution Group Management
+4760,Account Management,Audit Distribution Group Management
+4761,Account Management,Audit Distribution Group Management
+4762,Account Management,Audit Distribution Group Management
+4782,Account Management,Audit Other Account Management Events
+4793,Account Management,Audit Other Account Management Events
+4727,Account Management,Audit Security Group Management
+4728,Account Management,Audit Security Group Management
+4729,Account Management,Audit Security Group Management
+4730,Account Management,Audit Security Group Management
+4731,Account Management,Audit Security Group Management
+4732,Account Management,Audit Security Group Management
+4733,Account Management,Audit Security Group Management
+4734,Account Management,Audit Security Group Management
+4735,Account Management,Audit Security Group Management
+4737,Account Management,Audit Security Group Management
+4754,Account Management,Audit Security Group Management
+4755,Account Management,Audit Security Group Management
+4756,Account Management,Audit Security Group Management
+4757,Account Management,Audit Security Group Management
+4758,Account Management,Audit Security Group Management
+4764,Account Management,Audit Security Group Management
+4720,Account Management,Audit User Account Management
+4722,Account Management,Audit User Account Management
+4723,Account Management,Audit User Account Management
+4724,Account Management,Audit User Account Management
+4725,Account Management,Audit User Account Management
+4726,Account Management,Audit User Account Management
+4738,Account Management,Audit User Account Management
+4740,Account Management,Audit User Account Management
+4765,Account Management,Audit User Account Management
+4766,Account Management,Audit User Account Management
+4767,Account Management,Audit User Account Management
+4780,Account Management,Audit User Account Management
+4781,Account Management,Audit User Account Management
+4794,Account Management,Audit User Account Management
+5376,Account Management,Audit User Account Management
+5377,Account Management,Audit User Account Management
+4774,Account Logon,Audit Credential Validation
+4775,Account Logon,Audit Credential Validation
+4776,Account Logon,Audit Credential Validation
+4777,Account Logon,Audit Credential Validation
+4768,Account Logon,Audit Kerberos Authentication Service
+4771,Account Logon,Audit Kerberos Authentication Service
+4772,Account Logon,Audit Kerberos Authentication Service
+4769,Account Logon,Audit Kerberos Service Ticket Operations
+4770,Account Logon,Audit Kerberos Service Ticket Operations
+4649,Account Logon,Audit Other Account Logon Events
+4778,Account Logon,Audit Other Account Logon Events
+4779,Account Logon,Audit Other Account Logon Events
+4800,Account Logon,Audit Other Account Logon Events
+4801,Account Logon,Audit Other Account Logon Events
+4802,Account Logon,Audit Other Account Logon Events
+4803,Account Logon,Audit Other Account Logon Events
+5378,Account Logon,Audit Other Account Logon Events
+5632,Account Logon,Audit Other Account Logon Events
+5633,Account Logon,Audit Other Account Logon Events
